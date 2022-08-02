@@ -1,8 +1,16 @@
+"""
+Author: @marvhus | Edits: Alex
+Instructions:
+    Rename the "Text" class to whatever cipher you are working on.
+    Edit the encode and decode defs as required to encode or decode your cipher.
+    make sure you add the following to __init__.py: from cipherfile import *
+    Doing this will link the code to main.py 
+"""
 from cipher import Cipher
 
-class Text(Cipher):
+class Text(Cipher): #make sure you change this from text to your cipher
 
-    name = 'Plain text cipher'
+    name = 'Plain text cipher' #change the name
 
     def encode(args):
         text = args.text
@@ -10,7 +18,7 @@ class Text(Cipher):
         if not text:
             return {'text': "No input text", 'success': False}
 
-        # Do stuff with input
+        # Here is where you put your encoding / encrypting code.
 
         return {'text': text, 'success': True}
 
@@ -20,11 +28,12 @@ class Text(Cipher):
         if not text:
             return {'text': "No input text", 'success': False}
 
-        # Do stuff with input
+        #Here is where you put your decoding / decrypting code.
 
         return {'text': text, 'success': True}
 
     def print_options():
+        #Edit this section as needed for your specific encoding / decoding.
         print(''' 
         ### Modes
         -d / --decode ---- decode
