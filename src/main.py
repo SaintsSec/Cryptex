@@ -1,7 +1,6 @@
 import sys
 
 class Main:    
-
     def output(out, args):
         if not out['success']:
             sys.exit(f'Failed to run cipher "{args.cipher}"\nError: {out["text"]}')
@@ -80,7 +79,7 @@ if __name__ == '__main__':
 
     # If there are no args, exit
     if not args_exist:
-        print('List over ciphers:\n')
+        print('List of ciphers:\n')
         for _, name in enumerate(cipher_list):
             print(f'  {name} \t- {cipher_list[name].name}')
         print()
