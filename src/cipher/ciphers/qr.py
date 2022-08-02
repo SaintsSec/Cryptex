@@ -13,7 +13,6 @@ class qr(Cipher):
 
     def encode(args):
         text = args.text
-
         filename = args.output
 
         if not filename:

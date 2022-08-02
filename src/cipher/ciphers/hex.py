@@ -2,6 +2,7 @@
 Author: Alex Kollar | Project Manager: The Cryptex Project
 Description: A basic hexadecimal encoder / decoder
 """
+#TODO Work an getting file output working.
 from cipher import Cipher
 
 class Hex(Cipher): #make sure you change this from text to your cipher
@@ -10,6 +11,7 @@ class Hex(Cipher): #make sure you change this from text to your cipher
 
     def encode(args):
         text = args.text
+        filename = args.output
 
         if not text:
             return {'text': "No input text", 'success': False}
@@ -21,6 +23,7 @@ class Hex(Cipher): #make sure you change this from text to your cipher
 
     def decode(args):
         text = args.text
+        filename = args.output
 
         if not text:
             return {'text': "No input text", 'success': False}
@@ -38,4 +41,8 @@ class Hex(Cipher): #make sure you change this from text to your cipher
 
         ### Input
         -t / --text ------ input text
+        -o / -output ----- output to file
+        
+        ### Example
+        python3 main.py -e -t "Hello world!" -o ~/hello.txt
         ''')
