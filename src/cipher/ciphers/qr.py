@@ -14,6 +14,11 @@ class qr(Cipher):
     def encode(args):
         text = args.text
 
+        filename = args.output
+
+        if not filename:
+            return {'text': "No output file", 'success': False}
+        
         if not text:
             return {'text': "No input text", 'success': False}
 
@@ -27,18 +32,8 @@ class qr(Cipher):
         qr.make(fit=True)
 
         img = qr.make_image(fill='black', back_color='white')
-        img.save('qrout001.png')
-        return {'text': text, 'success': True}
-
-    # def decode(args):
-    #     text = args.text
-
-    #     if not text:
-    #         return {'text': "No input text", 'success': False}
-
-    #     # Do stuff with input
-
-    #     return {'text': text, 'success': True}
+        img.save(filename)
+        return {'text': filename, 'success': True}
 
     def print_options():
         print(''' 
@@ -47,4 +42,8 @@ class qr(Cipher):
 
         ### Input
         -t / --text ------ input text
+        -o / --output ---- output file
+
+        ### Examples
+        python main.py qr -e -t "hello" -o "text.png"
         ''')

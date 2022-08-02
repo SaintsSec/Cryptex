@@ -34,6 +34,7 @@ class Main:
         parser.add_argument('-t', '--text', dest='text', type=str, help="The input text")
         parser.add_argument('-k', '--key', dest='key', type=str, help="The key")
         parser.add_argument('-ex', '--exclude', dest='exclude', type=str, help="The exclude list")
+        parser.add_argument('-o', '--output', dest='output', type=str, help='output file')
 
         args = parser.parse_args()
 
