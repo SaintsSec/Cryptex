@@ -1,5 +1,5 @@
 """
-Author: Alex Kollar
+Author: Alex Kollar | Project Manager: The Cryptex Project.
 Links: https://github.com/CryptexProject | https://twitter.com/ssgcythes
 Description: A QR Generator for Cryptex
 """
