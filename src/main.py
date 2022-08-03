@@ -1,7 +1,9 @@
 import sys
-from cipher.ciphers.stuffnthangs import banner
+from vars import banner
+
 class Main:    
     def output(out, args):
+
         if not out['success']:
             sys.exit(f'Failed to run cipher "{args.cipher}"\nError: {out["text"]}')
    
