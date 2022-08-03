@@ -1,5 +1,5 @@
 import sys
-
+from cipher.ciphers.stuffnthangs import banner
 class Main:    
     def output(out, args):
         if not out['success']:
@@ -10,7 +10,8 @@ class Main:
             mode = "Decode"
         elif args.encode:
             mode = "Encode"
-
+        
+        banner()
         print(
         f'''
         ------ Cipher: {args.cipher} -- Mode: {mode} ------
