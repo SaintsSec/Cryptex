@@ -1,10 +1,6 @@
 """
 Author: @marvhus
-Instructions:
-    Rename the "Text" class to whatever cipher you are working on.
-    Edit the encode and decode defs as required to encode or decode your cipher.
-    make sure you add the following to __init__.py: from cipherfile import *
-    Doing this will link the code to main.py 
+Description: Reverse Cipher Cryptex Implementation
 """
 from cipher import Cipher
 
