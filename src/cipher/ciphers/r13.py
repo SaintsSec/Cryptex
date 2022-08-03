@@ -11,6 +11,7 @@ from cipher import Cipher
 class R13(Cipher):
 
     name = "Rot 13"
+    type = 'cipher'
 
     def encode(args):
         if not args.text:

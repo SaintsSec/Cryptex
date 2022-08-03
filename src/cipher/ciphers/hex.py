@@ -8,6 +8,7 @@ from cipher import Cipher
 class Hex(Cipher): #make sure you change this from text to your cipher
 
     name = 'Hex Encoder / Decoder' #change the name
+    type = 'cipher'
 
     def encode(args):
         text = args.text

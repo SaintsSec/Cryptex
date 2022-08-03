@@ -3,6 +3,7 @@ from cipher import Cipher
 class Text(Cipher):
 
     name = 'Plain text cipher'
+    type = 'cipher'
 
     def encode(args):
         text = args.text

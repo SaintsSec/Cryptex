@@ -1,6 +1,7 @@
 class Cipher(object):
 
     name = 'cipher'
+    type = 'none'
 
     def encode(args):
         return {'text': 'Not implemented', 'success': False}

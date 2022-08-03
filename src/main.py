@@ -53,7 +53,7 @@ class Main:
                 raise
             module = cipher_list[args.cipher]
             
-        except():
+        except:
             sys.exit(f'Cipher "{args.cipher}" may not exist')
     
         func = None
@@ -67,6 +67,28 @@ class Main:
             sys.exit("Please select a mode\nTry --help or -h for more information")
 
         Main.output(func(args), args)
+
+def print_ciphers(cipher_list):
+    cipher_types = {}
+    for name in cipher_list:
+        module = cipher_list[name]
+        if not module.type in cipher_types:
+            cipher_types[module.type] = []
+        cipher_types[module.type].append([module.name, name])
+        
+    
+    banner()
+
+    line = '-'*37
+    for key in cipher_types:
+        str = f'-- {key}s '
+        ammount = len(line) - len(str)
+        print('|' + str + '-'*ammount + "|-- short name ------|")
+        for item in cipher_types[key]:
+            str = f'\t{item[0]}'
+            ammount = 30 - len(str)
+            print(f'|      {str} {" " * ammount}|      {item[1]}  \t   |')
+    print('|' + line + '|' + '-'*20+'|')
 
 if __name__ == '__main__':
     # Check if there are args
@@ -83,10 +105,11 @@ if __name__ == '__main__':
 
     # If there are no args, exit
     if not args_exist:
-        print('List of ciphers:\n')
-        for _, name in enumerate(cipher_list):
-            print(f'  {name} \t- {cipher_list[name].name}')
-        print()
+        print_ciphers(cipher_list)
+        # print('List of ciphers:\n')
+        # for _, name in enumerate(cipher_list):
+            # print(f'  {name} \t- {cipher_list[name].name}')
+        # print()
         sys.exit("Please enter an argument when using this command.\nTry --help or -h for more information")
 
     args = Main.parse_args()

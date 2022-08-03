@@ -11,6 +11,7 @@ from cipher import Cipher
 class R47(Cipher):
 
     name = 'Rot 47'
+    type = 'cipher'
 
     def encode(args):
         text = args.text

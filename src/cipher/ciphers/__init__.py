@@ -9,5 +9,3 @@ from .r47 import *
 from .b64 import *
 from .bin import *
 
-#misc things
-from .stuffnthangs import *

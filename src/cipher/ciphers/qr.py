@@ -10,6 +10,7 @@ import qrcode, image
 class qr(Cipher):
 
     name = 'QR Code Generator'
+    type = 'tool'
 
     def encode(args):
         text = args.text

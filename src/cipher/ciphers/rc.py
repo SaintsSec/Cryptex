@@ -7,6 +7,7 @@ from cipher import Cipher
 class RC(Cipher):
 
     name = 'Reverse cipher'
+    type = 'cipher'
 
     def encode(args):
         text = args.text

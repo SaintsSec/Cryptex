@@ -7,6 +7,7 @@ from cipher import Cipher
 class bin(Cipher): #make sure you change this from text to your cipher
 
     name = 'Binary Translator' #change the name
+    type = 'cipher'
 
     def encode(args):
         text = args.text

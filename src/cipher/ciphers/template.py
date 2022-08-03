@@ -8,9 +8,10 @@ Instructions:
 """
 from cipher import Cipher
 
-class Text(Cipher): #make sure you change this from text to your cipher
+class Template(Cipher): #make sure you change this from text to your cipher
 
     name = 'Plain text cipher' #change the name
+    type = 'template'
 
     def encode(args):
         text = args.text

@@ -3,6 +3,7 @@ from cipher import Cipher
 class CC(Cipher):
 
     name = 'Caesar Cipher'
+    type = 'cipher'
 
     def encode(args):
         output = ''
