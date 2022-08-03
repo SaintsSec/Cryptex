@@ -68,27 +68,39 @@ class Main:
 
         Main.output(func(args), args)
 
+# function to help with printing the list of ciphers
+def add_extra(str, max, char):
+    ammount = max - len(str)
+    if ammount <= 0:
+        str = str[:ammount - 1]
+        return str
+    str = str + char * ammount
+    return str
+
 def print_ciphers(cipher_list):
+    # dictionary of all the types
     cipher_types = {}
+
+    # loop over all the ciphers
     for name in cipher_list:
-        module = cipher_list[name]
-        if not module.type in cipher_types:
-            cipher_types[module.type] = []
-        cipher_types[module.type].append([module.name, name])
-        
-    
+        # get the cipher type
+        type = cipher_list[name].type
+        # check if type is in dict, if not then add it
+        if not type in cipher_types:
+            cipher_types[type] = []
+        # add cipher long name and short name to list of that ciphers type
+        cipher_types[type].append([cipher_list[name].name, name])
+            
+    # print cryptex banner
     banner()
 
-    line = '-'*37
+    # Printing magic
+    line = add_extra('', 37, '-')
     for key in cipher_types:
-        str = f'-- {key}s '
-        ammount = len(line) - len(str)
-        print('|' + str + '-'*ammount + "|-- short name ------|")
+        print('|' + add_extra(f'-- {key}s', len(line), '-') + "|-- short name ------|")
         for item in cipher_types[key]:
-            str = f'\t{item[0]}'
-            ammount = 30 - len(str)
-            print(f'|      {str} {" " * ammount}|      {item[1]}  \t   |')
-    print('|' + line + '|' + '-'*20+'|')
+            print('|      ' + add_extra(item[0], 30, ' ') + f' |      {item[1]}  \t   |')
+    print('|' + line + '|' + add_extra('', 20, '-') +'|')
 
 if __name__ == '__main__':
     # Check if there are args
