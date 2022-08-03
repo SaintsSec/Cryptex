@@ -1,5 +1,5 @@
 """
-Author: @marvhus | Edits: Alex
+Author: @marvhus
 Instructions:
     Rename the "Text" class to whatever cipher you are working on.
     Edit the encode and decode defs as required to encode or decode your cipher.
@@ -8,9 +8,9 @@ Instructions:
 """
 from cipher import Cipher
 
-class Text(Cipher): #make sure you change this from text to your cipher
+class RC(Cipher):
 
-    name = 'Plain text cipher' #change the name
+    name = 'Reverse cipher'
 
     def encode(args):
         text = args.text
@@ -18,9 +18,9 @@ class Text(Cipher): #make sure you change this from text to your cipher
         if not text:
             return {'text': "No input text", 'success': False}
 
-        # Here is where you put your encoding / encrypting code.
+        output = text[::-1]
 
-        return {'text': text, 'success': True}
+        return {'text': output, 'success': True}
 
     def decode(args):
         text = args.text
@@ -28,13 +28,12 @@ class Text(Cipher): #make sure you change this from text to your cipher
         if not text:
             return {'text': "No input text", 'success': False}
 
-        #Here is where you put your decoding / decrypting code.
+        output = text[::-1]
 
-        return {'text': text, 'success': True}
-
+        return {'text': output, 'success': True}
+    
     def print_options():
-        #Edit this section as needed for your specific encoding / decoding.
-        print(''' 
+        print('''
         ### Modes
         -d / --decode ---- decode
         -e / --encode ---- encode
@@ -43,6 +42,6 @@ class Text(Cipher): #make sure you change this from text to your cipher
         -t / --text ------ input text
 
         ### Examples
-        python main.py text -e -t "hello"
-        python main.py text -d -t "hello"
+        python main.py rc -e -t "hello"
+        python main.py rc -d -t "hello"
         ''')

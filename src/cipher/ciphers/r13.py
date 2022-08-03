@@ -1,5 +1,5 @@
 """
-Author: @marvhus | Edits: Alex
+Author: @marvhus
 Instructions:
     Rename the "Text" class to whatever cipher you are working on.
     Edit the encode and decode defs as required to encode or decode your cipher.
@@ -8,33 +8,32 @@ Instructions:
 """
 from cipher import Cipher
 
-class Text(Cipher): #make sure you change this from text to your cipher
+class R13(Cipher):
 
-    name = 'Plain text cipher' #change the name
+    name = "Rot 13"
 
     def encode(args):
-        text = args.text
-
-        if not text:
+        if not args.text:
             return {'text': "No input text", 'success': False}
 
-        # Here is where you put your encoding / encrypting code.
+        from cipher.ciphers import CC
 
-        return {'text': text, 'success': True}
+        args.key = 13
+
+        return CC.encode(args)
 
     def decode(args):
-        text = args.text
-
-        if not text:
+        if not args.text:
             return {'text': "No input text", 'success': False}
 
-        #Here is where you put your decoding / decrypting code.
+        from cipher.ciphers import CC
 
-        return {'text': text, 'success': True}
+        args.key = 13
+
+        return CC.decode(args)
 
     def print_options():
-        #Edit this section as needed for your specific encoding / decoding.
-        print(''' 
+        print('''
         ### Modes
         -d / --decode ---- decode
         -e / --encode ---- encode
@@ -43,6 +42,6 @@ class Text(Cipher): #make sure you change this from text to your cipher
         -t / --text ------ input text
 
         ### Examples
-        python main.py text -e -t "hello"
-        python main.py text -d -t "hello"
+        python main.py r13 -e -t "hello"
+        python main.py r13 -d -t "hello"
         ''')

@@ -1,5 +1,5 @@
 """
-Author: @marvhus | Edits: Alex
+Author: @marvhus
 Instructions:
     Rename the "Text" class to whatever cipher you are working on.
     Edit the encode and decode defs as required to encode or decode your cipher.
@@ -8,9 +8,9 @@ Instructions:
 """
 from cipher import Cipher
 
-class Text(Cipher): #make sure you change this from text to your cipher
+class R47(Cipher):
 
-    name = 'Plain text cipher' #change the name
+    name = 'Rot 47'
 
     def encode(args):
         text = args.text
@@ -18,9 +18,16 @@ class Text(Cipher): #make sure you change this from text to your cipher
         if not text:
             return {'text': "No input text", 'success': False}
 
-        # Here is where you put your encoding / encrypting code.
+        output = ''
 
-        return {'text': text, 'success': True}
+        for character in text:
+            encoded = ord(character)
+            if encoded  >= 33 and encoded <= 126:
+                output += chr(33 + ((encoded + 14) % 94))
+            else:
+                output += character
+
+        return {'text': output, 'success': True}
 
     def decode(args):
         text = args.text
@@ -28,12 +35,18 @@ class Text(Cipher): #make sure you change this from text to your cipher
         if not text:
             return {'text': "No input text", 'success': False}
 
-        #Here is where you put your decoding / decrypting code.
+        output = ''
 
-        return {'text': text, 'success': True}
+        for character in text:
+            encoded = ord(character)
+            if encoded >= 33 and encoded <= 126:
+                output += chr(33 + ((encoded + 14) % 94))
+            else:
+                output += character
+
+        return {'text': output, 'success': True}
 
     def print_options():
-        #Edit this section as needed for your specific encoding / decoding.
         print(''' 
         ### Modes
         -d / --decode ---- decode
@@ -43,6 +56,6 @@ class Text(Cipher): #make sure you change this from text to your cipher
         -t / --text ------ input text
 
         ### Examples
-        python main.py text -e -t "hello"
-        python main.py text -d -t "hello"
+        python main.py r47 -e -t "hello"
+        python main.py r47 -d -t "hello"
         ''')
