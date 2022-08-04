@@ -8,4 +8,5 @@ from .rc import *
 from .r47 import *
 from .b64 import *
 from .bin import *
+from .mor import *
 
