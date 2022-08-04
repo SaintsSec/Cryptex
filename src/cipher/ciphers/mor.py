@@ -80,6 +80,8 @@ class Mor(Cipher): #make sure you change this from text to your cipher
 
     inverse_morse_alphabet = dict((var, key) for (key, var) in morse_alphabet.items())
 
+    get_dict_var = lambda dict, char : char if not char in dict else dict[char] 
+
     def encode(args):
         text = args.text
 
@@ -88,13 +90,8 @@ class Mor(Cipher): #make sure you change this from text to your cipher
 
         output = []
 
-        for character in text:
-            character = character.upper()
-            if character in Mor.morse_alphabet:
-                output.append(Mor.morse_alphabet[character])
-            else:
-                output.append(character)
-
+        for char in text:
+            output.append( Mor.get_dict_var(Mor.morse_alphabet, char.upper()) )
 
         return {'text': " ".join(output), 'success': True}
 
@@ -107,11 +104,8 @@ class Mor(Cipher): #make sure you change this from text to your cipher
         text = text.split(' ')
 
         output = ''
-        for item in text:
-            if item in Mor.inverse_morse_alphabet:
-                output += Mor.inverse_morse_alphabet[item]
-            else:
-                output += item
+        for char in text:
+            output += Mor.get_dict_var(Mor.inverse_morse_alphabet, char)
 
         return {'text': output, 'success': True}
 
