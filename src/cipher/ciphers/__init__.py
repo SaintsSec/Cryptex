@@ -10,4 +10,4 @@ from .b64 import *
 from .bin import *
 from .mor import *
 from .xor import *
-
+from .vig import *
