@@ -1,4 +1,4 @@
-# First And Foremost
+# First And Foremost  
 I would like to take a moment to thank everyone who has been involved in cryptex up to the point of this files creation on `Wednesday August 10th 2022`. This files serves as a **Perminant** monument to everyone who has been involved in the cryptex project. While this file does not include active and current developers its supposed to be a spot where we can give tribute to those who came made an impact and left for various reasons. Thank you all. I wish you all the best of luck in all you do. 
 ---
 ## Roll Credits:
