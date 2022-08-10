@@ -7,6 +7,7 @@ Instructions:
     Doing this will link the code to main.py 
 """
 from cipher import Cipher
+from cipher.ciphers import CC
 
 class R13(Cipher):
 
@@ -17,8 +18,6 @@ class R13(Cipher):
         if not args.text:
             return {'text': "No input text", 'success': False}
 
-        from cipher.ciphers import CC
-
         args.key = 13
 
         return CC.encode(args)
@@ -26,8 +25,6 @@ class R13(Cipher):
     def decode(args):
         if not args.text:
             return {'text': "No input text", 'success': False}
-
-        from cipher.ciphers import CC
 
         args.key = 13
 

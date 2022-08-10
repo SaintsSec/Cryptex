@@ -62,8 +62,9 @@ class Vig(Cipher): #make sure you change this from text to your cipher
 
         ### Input
         -t / --text ------ input text
+        -k / --key ------- key
 
         ### Examples
-        python main.py text -e -t "hello"
-        python main.py text -d -t "hello"
+        python main.py text -e -t "hello" -k "key"
+        python main.py text -d -t "rijvs" -k "key"
         ''') 
