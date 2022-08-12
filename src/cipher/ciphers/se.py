@@ -131,10 +131,10 @@ class SE(Cipher): #make sure you change this from text to your cipher
         -m / --monocromatic - monocromatic mode
 
         ### Examples
-        python main.py text -e -t 'hello'       -o 'hello.png'
-        python main.py text -e -t 'hello' -iw 3 -o 'hello.png'
-        python main.py text -e -t 'hello' -m    -o 'hello.png'
-        python main.py text -d -i 'hello.png' 
-        python main.py text -d -i 'hello.png' -iw 3
-        python main.py text -d -i 'hello.png' -m
+        python main.py se -e -t 'hello'       -o 'hello.png'
+        python main.py se -e -t 'hello' -iw 3 -o 'hello.png'
+        python main.py se -e -t 'hello' -m    -o 'hello.png'
+        python main.py se -d -i 'hello.png' 
+        python main.py se -d -i 'hello.png' -iw 3
+        python main.py se -d -i 'hello.png' -m
         ''')

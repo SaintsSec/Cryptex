@@ -12,4 +12,5 @@ from .mor import *
 from .xor import *
 from .vig import *
 from .se import *
+from .oct import *
 
