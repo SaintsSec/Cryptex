@@ -38,6 +38,9 @@ class Main:
         parser.add_argument('-k', '--key', dest='key', type=str, help="The key")
         parser.add_argument('-ex', '--exclude', dest='exclude', type=str, help="The exclude list")
         parser.add_argument('-o', '--output', dest='output', type=str, help='output file')
+        parser.add_argument('-i', '--input', dest='input', type=str, help='input file')
+        parser.add_argument('-iw', '--imageWidth', dest='imageWidth', type=int, help='image width')
+        parser.add_argument('-m', '--monocromatic', dest='monocromatic', action='store_true', help='monocromatic')
 
         args = parser.parse_args()
 
