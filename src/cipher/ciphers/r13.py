@@ -40,6 +40,6 @@ class R13(Cipher):
         -t / --text ------ input text
 
         ### Examples
-        python main.py r13 -e -t "hello"
-        python main.py r13 -d -t "hello"
+        python main.py r13 -e -t 'hello'
+        python main.py r13 -d -t 'hello'
         ''')

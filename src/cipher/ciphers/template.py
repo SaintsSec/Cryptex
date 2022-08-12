@@ -44,6 +44,6 @@ class Template(Cipher): #make sure you change this from text to your cipher
         -t / --text ------ input text
 
         ### Examples
-        python main.py text -e -t "hello"
-        python main.py text -d -t "hello"
+        python main.py text -e -t 'hello'
+        python main.py text -d -t 'hello'
         ''')

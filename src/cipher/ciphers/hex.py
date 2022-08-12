@@ -45,5 +45,6 @@ class Hex(Cipher): #make sure you change this from text to your cipher
         -o / -output ----- output to file
         
         ### Example
-        python3 main.py -e -t "Hello world!" -o ~/hello.txt
+        python3 main.py -e -t 'Hello world!' -o ~/hello.txt
         ''')
+        #TODO(marvhus): Remove -o/--output and instead implement it in the Main.output() function

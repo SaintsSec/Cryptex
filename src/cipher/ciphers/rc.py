@@ -39,6 +39,6 @@ class RC(Cipher):
         -t / --text ------ input text
 
         ### Examples
-        python main.py rc -e -t "hello"
-        python main.py rc -d -t "hello"
+        python main.py rc -e -t 'hello'
+        python main.py rc -d -t 'hello'
         ''')

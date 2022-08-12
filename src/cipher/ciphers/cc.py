@@ -63,6 +63,6 @@ class CC(Cipher):
         ### Examples
         python main.py cc -e -t "hello" -k 10
         python main.py cc -d -t "hello" -k 10
-        python main.py cc -e -t "hello" -k 10 -ex "123456789"
-        python main.py cc -d -t "hello" -k 10 -ex "123456789"
+        python main.py cc -e -t "hello" -k 10 -ex '123456789'
+        python main.py cc -d -t "hello" -k 10 -ex '123456789'
        ''')

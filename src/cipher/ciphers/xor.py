@@ -64,6 +64,6 @@ class XOR(Cipher): #make sure you change this from text to your cipher
         -k / --key ------- key
 
         ### Examples
-        python main.py text -e -t "hello" -k "KEY"
-        python main.py text -d -t "# 5'*" -k "KEY"
+        python main.py text -e -t 'hello' -k 'KEY'
+        python main.py text -d -t '# 5'*' -k 'KEY'
         ''')

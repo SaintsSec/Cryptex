@@ -45,5 +45,5 @@ class qr(Cipher):
         -o / --output ---- output file
 
         ### Examples
-        python main.py qr -e -t "hello" -o "text.png"
+        python main.py qr -e -t "hello" -o 'text.png'
         ''')

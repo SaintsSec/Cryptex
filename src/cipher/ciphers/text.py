@@ -33,4 +33,7 @@ class Text(Cipher):
 
         ### Input
         -t / --text ------ input text
+
+        ### Example
+        python main.py text -t 'hello'
         ''')
