@@ -13,4 +13,5 @@ from .xor import *
 from .vig import *
 from .se import *
 from .oct import *
+from .L33T import *
 
