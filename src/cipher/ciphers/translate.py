@@ -59,6 +59,6 @@ class Translate(Cipher): #make sure you change this from text to your cipher
 
         ### Examples
         python main.py translate -e --lang
-        python main.py text -e -t 'hello' -src 'en' -dest 'no'
-        python main.py text -d -t 'hallo' -src 'no' -dest 'en'
+        python main.py translate -e -t 'hello' -src 'en' -dest 'no'
+        python main.py translate -d -t 'hallo' -src 'no' -dest 'en'
         ''')
