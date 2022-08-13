@@ -4,6 +4,9 @@ from vars import banner
 class Main:    
     def output(out, args):
 
+        if 'languages' in out:
+            return
+
         if not out['success']:
             sys.exit(f'Failed to run cipher "{args.cipher}"\nError: {out["text"]}')
    
@@ -41,6 +44,9 @@ class Main:
         parser.add_argument('-i', '--input', dest='input', type=str, help='input file')
         parser.add_argument('-iw', '--imageWidth', dest='imageWidth', type=int, help='image width')
         parser.add_argument('-m', '--monocromatic', dest='monocromatic', action='store_true', help='monocromatic')
+        parser.add_argument('-lang', dest='languages', action='store_true', help='show languages')
+        parser.add_argument('-src', dest='src_lang', type=str, help='source language')
+        parser.add_argument('-dest', dest='dest_lang', type=str, help='destination language')
 
         args = parser.parse_args()
 
@@ -102,7 +108,7 @@ def print_ciphers(cipher_list):
     for key in cipher_types:
         print('|' + add_extra(f'-- {key}s', len(line), '-') + "|-- short name ------|")
         for item in cipher_types[key]:
-            print('|      ' + add_extra(item[0], 30, ' ') + f' |      {item[1]}  \t   |')
+            print('|      ' + add_extra(item[0], 30, ' ') + f' |      {item[1]} \t   |')
     print('|' + line + '|' + add_extra('', 20, '-') +'|')
 
 if __name__ == '__main__':
