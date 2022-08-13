@@ -16,4 +16,5 @@ from .oct import *
 from .L33T import *
 from .translate import *
 from .md5 import *
+from .pswd import *
 

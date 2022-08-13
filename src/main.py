@@ -17,6 +17,14 @@ class Main:
             mode = "Encode"
         
         banner()
+        if args.cipher == 'pswd':
+            print(
+            f'''
+            Length   | {args.length}
+            Password | {out['text']}
+            ''')
+            return
+
         print(
         f'''
         ------ Cipher: {args.cipher} -- Mode: {mode} ------
@@ -47,6 +55,7 @@ class Main:
         parser.add_argument('-lang', dest='languages', action='store_true', help='show languages')
         parser.add_argument('-src', dest='src_lang', type=str, help='source language')
         parser.add_argument('-dest', dest='dest_lang', type=str, help='destination language')
+        parser.add_argument('-len', dest='length', type=int, help='length')
 
         args = parser.parse_args()
 
