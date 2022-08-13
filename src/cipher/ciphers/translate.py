@@ -7,7 +7,7 @@ from googletrans import Translator, LANGUAGES
 class Translate(Cipher): #make sure you change this from text to your cipher
 
     name = 'Google Translate' #change the name
-    type = 'tools'
+    type = 'tool'
 
     @staticmethod
     def translate(text, src_lang, dest_lang):
