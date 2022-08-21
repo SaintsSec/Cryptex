@@ -20,9 +20,11 @@ class Main:
         if args.cipher == 'pswd':
             print(
             f'''
-            Length   | {args.length}
-            Password | {out['text']}
-            ''')
+        ------ Cipher: {args.cipher} -- Mode: {mode} ------
+        Length   | {args.length}
+        Password | {out['text']}
+        ----
+        ''')
             return
 
         print(
