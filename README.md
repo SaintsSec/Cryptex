@@ -1,5 +1,6 @@
 # Cryptex | An SSG Community Project
-### Locks only exist to keep honest people honest
+> Locks only exist to keep honest people honest  
+
 ![image](https://user-images.githubusercontent.com/89718570/188364762-de6d7cfa-d5f6-4cc3-8d0d-e3a87bfe1c5f.png)
 ## History
 ![image](https://user-images.githubusercontent.com/89718570/188368595-d5ea0a5c-e740-41dd-94e1-b038fadb518e.png)
