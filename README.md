@@ -1,5 +1,7 @@
 # Cryptex | An SSG Community Project
-> Locks only exist to keep honest people honest  
+> Locks only exist to keep honest people honest 
+
+\#hacktoberfest
 
 ![image](https://user-images.githubusercontent.com/89718570/188364762-de6d7cfa-d5f6-4cc3-8d0d-e3a87bfe1c5f.png)
 ## History
