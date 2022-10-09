@@ -31,15 +31,17 @@ class Main:
         f'''
         ------ Cipher: {args.cipher} -- Mode: {mode} ------
         Input  | {args.text}
-        output | {out['text']}
-        ----
+        Output | {out['text']}
         ''')
+
+        print(f'\t{f"Read: {args.input}" if args.input else "Read: Input Text"}')
+        print(f'\t{f"Wrote: {args.output}" if args.output else "Wrote: Nothing"}')
+        print(f"\t-----")
 
         # if output then output
         if args.output:
             with open(args.output, "w") as f:
                 f.write(f"{out['text']}")
-                print(f"Wrote output to {args.output}!")
 
     def parse_args():
         import argparse
@@ -84,16 +86,12 @@ class Main:
     
         func = None
 
-        # if input file then here
-
         if args.input:
             with open(args.input, "r") as f:
                 data = f.readlines()
-
                 data = "".join(data)
-
                 args.text = data
-            print(f"Opened {args.input}")
+
 
         if args.encode:
             func = module.encode
