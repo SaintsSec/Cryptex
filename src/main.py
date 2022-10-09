@@ -35,6 +35,12 @@ class Main:
         ----
         ''')
 
+        # if output then output
+        if args.output:
+            with open(args.output, "w") as f:
+                f.write(f"{out['text']}")
+                print(f"Wrote output to {args.output}!")
+
     def parse_args():
         import argparse
 
@@ -77,6 +83,17 @@ class Main:
             sys.exit(f'Cipher "{args.cipher}" may not exist')
     
         func = None
+
+        # if input file then here
+
+        if args.input:
+            with open(args.input, "r") as f:
+                data = f.readlines()
+
+                data = "".join(data)
+
+                args.text = data
+            print(f"Opened {args.input}")
 
         if args.encode:
             func = module.encode
@@ -148,7 +165,7 @@ if __name__ == '__main__':
 
     # idk... just in case
     if not args:
-        sys.exit("Something whent wrong...")
+        sys.exit("Something went wrong...")
 
     Main.run(args, cipher_list)
     
