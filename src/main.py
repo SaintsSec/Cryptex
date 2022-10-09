@@ -30,13 +30,12 @@ class Main:
         print(
         f'''
         ------ Cipher: {args.cipher} -- Mode: {mode} ------
-        Input  | {args.text}
-        Output | {out['text']}
-        ''')
+        Input      | {args.text}
+        Output     | {out['text']}
 
-        print(f'\t{f"Read: {args.input}" if args.input else "Read: Input Text"}')
-        print(f'\t{f"Wrote: {args.output}" if args.output else "Wrote: Nothing"}')
-        print(f"\t-----")
+        Read File  | {args.input if args.input else "N/A"}
+        Wrote File | {args.output if args.output else "N/A"}
+        ''')
 
         # if output then output
         if args.output:
