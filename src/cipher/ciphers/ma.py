@@ -74,5 +74,5 @@ class MA(Cipher):
         -k / --key ------- key (26 Characters)
 
         ### Example
-        python main.py monoalpabetic -t 'hello' -k 'BSDPFRJUGEOZLICNQKATYVWHXM'
+        python main.py ma -t 'hello' -k 'BSDPFRJUGEOZLICNQKATYVWHXM'
         ''')
