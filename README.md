@@ -5,6 +5,9 @@
 
 ### You can join in on chatting with the dev team on our [Discord server](https://discord.gg/899KQFeAXr)
 
+### Contributing
+Before contrubuting make sure to check out [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ![image](https://user-images.githubusercontent.com/89718570/188364762-de6d7cfa-d5f6-4cc3-8d0d-e3a87bfe1c5f.png)
 ## History
 ![image](https://user-images.githubusercontent.com/89718570/188368595-d5ea0a5c-e740-41dd-94e1-b038fadb518e.png)
