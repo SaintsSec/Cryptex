@@ -25,6 +25,7 @@ class MC(Cipher):
         lookup_table={}
         for i in range(26):
             lookup_table[chr(ord('a') + i)] = i
+            lookup_table[chr(ord('A') + i)] = 26 + i
         key_list = list(lookup_table.keys())
         inv_lookup_table = dict(zip(lookup_table.values(), lookup_table.keys()))
 
@@ -41,8 +42,9 @@ class MC(Cipher):
         if math.gcd(26, key) == 1:
             for char in text:
                 if char in key_list:
+                    offset = 0 if char.islower() else 26
                     new_index = (lookup_table[char] * key) % 26
-                    output += inv_lookup_table[new_index]
+                    output += inv_lookup_table[new_index + offset]
                 else:
                     output += char
         else:
