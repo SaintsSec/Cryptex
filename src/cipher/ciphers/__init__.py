@@ -18,3 +18,4 @@ from .translate import *
 from .md5 import *
 from .pswd import *
 from .mc import *
+from .menc import *
