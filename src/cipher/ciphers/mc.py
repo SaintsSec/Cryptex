@@ -69,7 +69,7 @@ class MC(Cipher):
         multi_inv = mod_inv(key, 26)
         for char in text:
             if char in key_list:
-                new_index = (lookup_table[char] * multi_inv) % 26
+                new_index = (lookup_table[char.lower()] * multi_inv) % 26
                 output += inv_lookup_table[new_index]
             else:
                 output += char
