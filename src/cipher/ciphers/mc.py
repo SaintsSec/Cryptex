@@ -30,7 +30,10 @@ class MC(Cipher):
 
         output = ''
         text = args.text
-        key = args.key
+        try:
+            key = int(args.key)
+        except ValueError:
+            return {'text': "Key has to be a whole number", 'success': False}
 
         if not text:
             return {'text': "No input text", 'success': False}
