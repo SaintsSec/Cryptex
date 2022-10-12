@@ -92,12 +92,80 @@ If you face any problems while using the application, please open an issue here
 Contributions, feedback, and bug reports are welcome! Feel free to check out our [issues page](https://github.com/SSGorg/Cryptex/issues) to find out what you could do! but before contrubuting make sure to check out [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Using Cryptex 
-**Bringing up the list of encryptions**  
-![image](https://user-images.githubusercontent.com/89718570/195420448-c681d6c2-b569-4937-8dc3-ef7fa53ddec8.png)  
+```
+$ python main.py
 
-**Getting help with a cipher**  
-![image](https://user-images.githubusercontent.com/89718570/195420584-08500d43-d6b5-4162-a468-f4aa91250336.png)  
+               _____              __         
+              / ___/_____ _____  / /______ __
+             / /__/ __/ // / _ \/ __/ -_) \ /
+             \___/_/  \_, / .__/\__/\__/_\_\ 
+              V:0.0.1/___/_/  OOP Edition
+              Locks only exist to keep honest 
+                       people honest
+          
+|-- ciphers---------------------------|-- short name ------|
+|      Plain text cipher              |      text          |
+|      Caesar Cipher                  |      cc            |
+|      Rot 13                         |      r13           |
+|      Reverse cipher                 |      rc            |
+|      Rot 47                         |      r47           |
+|      Base 64                        |      b64           |
+|      Morse code                     |      mor           |
+|      XOR (Exclusive Or) Cipher      |      xor           |    
+|      Vignere Cipher                 |      vig           |
+|      Static Encryption              |      se            |
+|      Octal                          |      oct           |
+|      L33t Sp34k                     |      l33t          |
+|      Multiplicative Cipher          |      mc            |
+|      Menc                           |      menc          |
+|      MonoAlphabetic cipher          |      ma            |
+|-- tools-----------------------------|-- short name ------|
+|      QR Code Generator              |      qr            |
+|      Google Translate               |      translate     |
+|      Password generator             |      pswd          |
+|-- datatypes-------------------------|-- short name ------|
+|      Hex Encoder / Decoder          |      hex           |
+|      Binary Translator              |      bin           |
+|-- hash functions--------------------|-- short name ------|
+|      MD5                            |      md5           |
+|-------------------------------------|--------------------|
 
-**Encryption with ceasar cipher**  
-![image](https://user-images.githubusercontent.com/89718570/195420722-e69f403f-5f2d-4656-9159-b500225bfd5a.png)
+Try --help or -h for more information
+      
+$ python main.py cc
+ 
+        ### Modes
+        -d / --decode ---- decode
+        -e / --encode ---- encode
+
+        ### Input
+        -t / --text ------ input text
+        -k / --key ------- shift key
+        -ex / --exclude -- exclude list
+
+        ### Examples
+        python main.py cc -e -t "hello" -k 10
+        python main.py cc -d -t "hello" -k 10
+        python main.py cc -e -t "hello" -k 10 -ex '123456789'
+        python main.py cc -d -t "hello" -k 10 -ex '123456789'
+       
+
+Try --help or -h for more information
+      
+$ python main.py cc -e -t "Drink all the booze, Hack all the things..." -k 4
+
+               _____              __         
+              / ___/_____ _____  / /______ __
+             / /__/ __/ // / _ \/ __/ -_) \ /
+             \___/_/  \_, / .__/\__/\__/_\_\ 
+              V:0.0.1/___/_/  OOP Edition
+              Locks only exist to keep honest 
+                       people honest
+          
+
+        ------ Cipher: cc -- Mode: Encode ------
+        Input      | Drink all the booze, Hack all the things...
+        Output     | Hvmro epp xli fssdi, Lego epp xli xlmrkw...
+
+```
 
