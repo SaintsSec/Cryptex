@@ -1,19 +1,15 @@
-![banner](https://i.imgur.com/AeE9koP.png)
-<h2 align="center">
-    Cryptex | An SSG Community Project<br>
-</h2>
+<div align="center">
+  <img src="https://i.imgur.com/AeE9koP.png" alt="Logo">
+  <h1> Cryptex | An SSG Community Project </h1>
+  <h3>Locks only exist to keep honest people honest</h3>
+</div>
 
 <p align="center">
     <a href="https://github.com/SSGorg/Cryptex/blob/main/LICENCE"><img src="https://img.shields.io/badge/license-AGPL%20%203.0-0d1117?style=flat-square" alt="GitHub License"></a>
     <a href="https://github.com/SSGorg/Cryptex/issues"><img src="https://img.shields.io/github/issues/SSGorg/Cryptex?color=0d1117&style=flat-square" alt="GitHub Issues"> 
-  <a href="https://github.com/SSGorg/Cryptex/stargazers"><img src="https://img.shields.io/github/stars/SSGorg/Cryptex?style=flat-square&color=0d1117" alt="GitHub Stars">    </a>
-    <a href="https://github.com/SSGorg/Cryptex/pulls"><img src="https://img.shields.io/github/issues-pr/SSGorg/Cryptex?color=0d1117&style=flat-square" alt="GitHub Pull Requests"></a
-    <br><br>
+    <a href="https://github.com/SSGorg/Cryptex/stargazers"><img src="https://img.shields.io/github/stars/SSGorg/Cryptex?style=flat-square&color=0d1117" alt="GitHub Stars"></a>
+    <a href="https://github.com/SSGorg/Cryptex/pulls"><img src="https://img.shields.io/github/issues-pr/SSGorg/Cryptex?color=0d1117&style=flat-square" alt="GitHub Pull Requests"></a>
 </p>
-
-
-## 🤝 Contributing
-Contributions, feedback, and bug reports are welcome! Feel free to check out our [issues page](https://github.com/SSGorg/Cryptex/issues) to find out what you could do! but before contrubuting make sure to check out [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## 📖 History
 ```
@@ -86,6 +82,16 @@ $ python main.py cc
 Please select a mode
 Try --help or -h for more information
 ```
+## 🖐️ Get in touch
+### You can join in on chatting with the dev team on our discord server
+  <a href="https://discord.gg/899KQFeAXrF"><img src="https://discordapp.com/api/guilds/879757204620726362/widget.png?style=banner3" alt="Discord Server"></a>
+  
+## 🔧 Issues
+If you face any problems while using the application, please open an issue here
+ 
+## 🤝 Contributing
+Contributions, feedback, and bug reports are welcome! Feel free to check out our [issues page](https://github.com/SSGorg/Cryptex/issues) to find out what you could do! but before contrubuting make sure to check out [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## Using Cryptex 
 ```
 $ python main.py
