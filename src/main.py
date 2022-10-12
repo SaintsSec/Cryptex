@@ -1,5 +1,5 @@
 import sys
-from vars import banner
+from vars import banner, patch_art
 
 class Main:    
     def output(out, args):
@@ -128,6 +128,7 @@ def print_ciphers(cipher_list):
             
     # print cryptex banner
     banner()
+    patch_art()
 
     # Printing magic
     line = add_extra('', 37, '-')
