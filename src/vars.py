@@ -9,3 +9,17 @@ def banner():
                        people honest
           ''')
     
+def patch_art():
+    # The custom ascii art for that spesific version
+    # https://patorjk.com/software/taag/#p=display&h=3&v=3&f=Chiseled&t=OOP
+    print('''
+                _,.---._         _,.---._          _ __    
+              ,-.' , -  `.     ,-.' , -  `.     .-`.' ,`.  
+             /==/_,  ,  - \   /==/_,  ,  - \   /==/, -   \ 
+            |==|   .=.     | |==|   .=.     | |==| _ .=. | 
+            |==|_ : ;=:  - | |==|_ : ;=:  - | |==| , '=',| 
+            |==| , '='     | |==| , '='     | |==|-  '..'  
+             \==\ -    ,_ /   \==\ -    ,_ /  |==|,  |     
+              '.='. -   .'     '.='. -   .'   /==/ - |     
+                `--`--''         `--`--''     `--`---'     
+    ''')
