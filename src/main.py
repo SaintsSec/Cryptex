@@ -17,6 +17,7 @@ class Main:
             mode = "Encode"
         
         banner()
+        patch_art()
         if args.cipher == 'pswd':
             print(
             f'''
