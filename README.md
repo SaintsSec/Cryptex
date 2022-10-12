@@ -12,16 +12,15 @@
 </p>
 
 ## 📖 History
-```
 Cryptex started out in November 2021 with one developer Alex "cythes" Kollar as an attempt to be less of a script kiddy.
-It has since became so much more. In April of 2022 the official cryptex Deve lopment Team formed. Consisting of members
-of two security groups with one common goal. To make cryptex the metasploit of cryptography. S1nce then A few great dev's
-nave come and gone from the project but cryptex persisists. If you want to know more about the prev1ous developers go check
-Dut our credits page. Cryptex has evolved so much in just the little time it has existed. Going from a hodge podge of tools
-and scripts to being a fully functional professional grade tool. In this release the core dev team has taken a step back and
-completely refractored the tool to work with object oriented Programming. As well as making it easier to mpliment new Ciphers
-and tools into the program 1t self.      
-```
+It has since became so much more. In April of 2022 the official cryptex Development Team formed. Consisting of members
+of two security groups with one common goal. To make Cryptex the Metasploit of cryptography. Since then A few great dev's
+nave come and gone from the project but Cryptex persists. If you want to know more about the previous developers go check
+out our credits page. Cryptex has evolved so much in just the little time it has existed. Going from a Hodge-podge of tools
+and scripts to being a fully functional professional grade tool.    
+
+As of the Pumpkin Patch 00 release the core dev team has taken a step back and completely refactored the tool to work with object oriented Programming. As well as making it easier to implement new Ciphers
+and tools into the program it self.  
       
 ## 🛠️Basic Help:
 ```
