@@ -1,3 +1,5 @@
+import os
+import subprocess
 import sys
 from vars import banner
 
@@ -16,6 +18,10 @@ class Main:
         elif args.encode:
             mode = "Encode"
         
+        if args.layered:
+            with open("intermediate.txt", "w") as f:
+                f.write(out['text'])
+
         banner()
         if args.cipher == 'pswd':
             print(
@@ -66,6 +72,9 @@ class Main:
         parser.add_argument('-dest', dest='dest_lang', type=str, help='destination language')
         parser.add_argument('-len', dest='length', type=int, help='length')
 
+        # layered
+        parser.add_argument('-lay', '--layered', dest='layered', action='store_true')
+
         args = parser.parse_args()
 
         return args
@@ -104,11 +113,11 @@ class Main:
 
 # function to help with printing the list of ciphers
 def add_extra(str, max, char):
-    ammount = max - len(str)
-    if ammount <= 0:
-        str = str[:ammount - 1]
+    amount = max - len(str)
+    if amount <= 0:
+        str = str[:amount - 1]
         return str
-    str = str + char * ammount
+    str = str + char * amount
     return str
 
 def print_ciphers(cipher_list):
@@ -158,11 +167,51 @@ if __name__ == '__main__':
         # print()
         sys.exit("Please enter an argument when using this command.\nTry --help or -h for more information")
 
-    args = Main.parse_args()
+    if '+' in sys.argv:
+        try:
+            text = sys.argv[sys.argv.index('-t') + 1]
+            sys.argv[sys.argv.index('-t') + 1] = f'"{text}"'
+        except ValueError:
+            pass
 
-    # idk... just in case
-    if not args:
-        sys.exit("Something went wrong...")
+        args = " ".join(sys.argv[1:])
+        layers = args.split(' + ')
+        previous_output = None
 
-    Main.run(args, cipher_list)
+        for index, layer in enumerate(layers):
+            if index < len(layers) - 1:
+                layer += ' -lay'
+
+            if previous_output:
+                layer += f' -t "{previous_output}"'
+            
+            print(f'Layer: {layer}')
+
+            proc = subprocess.Popen(f'python3 ./src/main.py {layer}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            out, err = proc.communicate()
+
+            if err:
+                print(err.decode())
+                sys.exit()
+
+            previous_output = open('intermediate.txt', 'r').read()
+
+            print(previous_output)
+
+            if index == len(layers) - 1:
+                print(out.decode())
+        os.remove('intermediate.txt')
+
+    else:
+        args = Main.parse_args()
+        Main.run(args, cipher_list)
+
+
+    #args = Main.parse_args()
+
+    ## idk... just in case
+    #if not args:
+    #    sys.exit("Something went wrong...")
+
+    #Main.run(args, cipher_list)
     
