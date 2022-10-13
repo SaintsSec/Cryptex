@@ -74,6 +74,8 @@ class Bac(Cipher):
             elif len(key) == 2:
                 char1 = key[0]
                 char2 = key[-1]
+                if char1 == char2:
+                    return {'text': f"Key '{char1}' and '{char2}' can't be similar", 'success': False}
         else:
             key = char1+char2
 
