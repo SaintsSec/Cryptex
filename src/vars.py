@@ -6,7 +6,7 @@ def banner():
         '\___/_/  \_, / .__/\__/\__/_\_\ ',
         ' V:0.0.1/___/_/  OOP Edition     ',
         ' Locks only exist to keep honest ',
-        '          people honest          '.
+        '          people honest          ',
     ]
     logo_len = max([len(item) for item in logo])
     
