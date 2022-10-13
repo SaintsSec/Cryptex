@@ -1,40 +1,94 @@
-"""
-Author: @marvhus | Edits: Alex
-Instructions:
-    Rename the "Text" class to whatever cipher you are working on.
-    Edit the encode and decode defs as required to encode or decode your cipher.
-    make sure you add the following to __init__.py: from cipherfile import *
-    Doing this will link the code to main.py 
-"""
 from cipher import Cipher
 
-class Template(Cipher): #make sure you change this from text to your cipher
-
-    name = 'Plain text cipher' #change the name
-    type = 'template'
+class Bac(Cipher):
+    """
+    This chiper uses 26 alphabets version.
+    """
+    name = 'Baconian Chiper'
+    type = 'chiper'
 
     def encode(args):
+        ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        char1 = 'a'
+        char2 = 'b'
         text = args.text
+        key = args.key
 
         if not text:
             return {'text': "No input text", 'success': False}
 
-        # Here is where you put your encoding / encrypting code.
+        if key:
+            if len(key) == 1 or len(key) > 2:
+                return {'text': "Key must be 2 characters", 'success': False}
+            elif len(key) == 2:
+                char1 = key[0]
+                char2 = key[-1]
 
-        return {'text': text, 'success': True}
+        text_split = list(text.upper())
+
+        # Make a bacon code
+        bacon_list = []
+        bin_cnt = 0
+        for c in ALPHABET:
+            bacon_list.append([c, bin(bin_cnt)[2:].zfill(5)])
+            bin_cnt += 1
+        bacon_idx =  dict(bacon_list)
+
+        # Convert the alphabet into bacon code
+        for i in range(len(text_split)):
+            bin_representation = bacon_idx[text_split[i]]
+            text_split[i] = bin_representation.replace('0', char1).replace('1', char2)
+
+        encoded_text = ''.join(text_split)
+
+        return {'text': encoded_text, 'success': True}
 
     def decode(args):
+        ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        char1 = 'a'
+        char2 = 'b'
         text = args.text
+        key = args.key
 
         if not text:
             return {'text': "No input text", 'success': False}
+        
+        if len(text) % 5:
+            return {
+                'text': "The encoded text must be a length in multiples of 5",
+                'success': False
+            }
 
-        #Here is where you put your decoding / decrypting code.
+        if key:
+            if len(key) == 1 or len(key) > 2:
+                return {'text': "Key must be 2 characters", 'success': False}
+            elif len(key) == 2:
+                char1 = key[0]
+                char2 = key[-1]
 
-        return {'text': text, 'success': True}
+        # Make a bacon code
+        bacon_list = []
+        bin_cnt = 0
+        for c in ALPHABET:
+            bacon_list.append([bin(bin_cnt)[2:].zfill(5), c])
+            bin_cnt += 1
+        bacon_idx_reversed =  dict(bacon_list)
+
+        # group the encoded text into 5 characters each
+        grouped_text = []
+        for mul in range(len(text)//5):
+            grouped_text.append(text[mul*5:(mul+1)*5])
+
+        # Convert the bacon code into alphabet
+        for i in range(len(grouped_text)):
+            alpha_representation = grouped_text[i].replace(char1, '0').replace(char2, '1')
+            grouped_text[i] = bacon_idx_reversed[alpha_representation]
+
+        decoded_text = ''.join(grouped_text)
+
+        return {'text': decoded_text, 'success': True}
 
     def print_options():
-        #Edit this section as needed for your specific encoding / decoding.
         print(''' 
         ### Modes
         -d / --decode ---- decode
@@ -42,8 +96,11 @@ class Template(Cipher): #make sure you change this from text to your cipher
 
         ### Input
         -t / --text ------ input text
+        -k / --key ------ key that contains 2 characters only
 
         ### Examples
-        python main.py text -e -t 'hello'
-        python main.py text -d -t 'hello'
+        python main.py bac -e -t 'hello'
+        python main.py bac -d -t 'aabbbabaaa'
+        python main.py bac -e -t 'hello' -k 'xy'
+        python main.py bac -d -t 'xxyyyxyxxx' -k 'xy'
         ''')
