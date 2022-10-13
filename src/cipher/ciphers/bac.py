@@ -1,3 +1,7 @@
+"""
+Author: @Iqrar99
+Description: A basic Baconian Chiper encoder / decoder
+"""
 from cipher import Cipher
 
 class Bac(Cipher):
@@ -23,8 +27,11 @@ class Bac(Cipher):
             elif len(key) == 2:
                 char1 = key[0]
                 char2 = key[-1]
+                if char1 == char2:
+                    return {'text': f"Key '{char1}' and '{char2}' can't be similar", 'success': False}
 
-        text_split = list(text.upper())
+        # Ignore non alphabetic characters
+        text_split = [c.upper() for c in text if c.isalpha()]
 
         # Make a bacon code
         bacon_list = []
@@ -45,26 +52,46 @@ class Bac(Cipher):
 
     def decode(args):
         ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        char1 = 'a'
-        char2 = 'b'
+        char1 = 'A'  # Default key
+        char2 = 'B'  # Default key
         text = args.text
         key = args.key
 
         if not text:
             return {'text': "No input text", 'success': False}
-        
+        else:
+            text = text.upper()
+
+        if key != None:
+            key = key.upper()
+            if len(key) == 0:
+                key = char1+char2
+            elif len(key) == 1 or len(key) > 2:
+                return {'text': "Key must be 2 characters", 'success': False}
+            elif len(key) == 2:
+                char1 = key[0]
+                char2 = key[-1]
+        else:
+            key = char1+char2
+
+        # Check if the characters are valid with the key
+        clean_text = []
+        for c in text:
+            # Ignore non alphabetic characters
+            if c.isalpha() and c in key:
+                clean_text.append(c)
+            elif not c.isalpha():
+                continue
+            else:
+                return {'text': f"Key '{args.key}' and encoded text '{args.text}' is not matched", 'success': False}
+
+        text = ''.join(clean_text)
+
         if len(text) % 5:
             return {
                 'text': "The encoded text must be a length in multiples of 5",
                 'success': False
             }
-
-        if key:
-            if len(key) == 1 or len(key) > 2:
-                return {'text': "Key must be 2 characters", 'success': False}
-            elif len(key) == 2:
-                char1 = key[0]
-                char2 = key[-1]
 
         # Make a bacon code
         bacon_list = []
@@ -72,7 +99,7 @@ class Bac(Cipher):
         for c in ALPHABET:
             bacon_list.append([bin(bin_cnt)[2:].zfill(5), c])
             bin_cnt += 1
-        bacon_idx_reversed =  dict(bacon_list)
+        bacon_idx_reversed = dict(bacon_list)
 
         # group the encoded text into 5 characters each
         grouped_text = []
@@ -82,7 +109,13 @@ class Bac(Cipher):
         # Convert the bacon code into alphabet
         for i in range(len(grouped_text)):
             alpha_representation = grouped_text[i].replace(char1, '0').replace(char2, '1')
-            grouped_text[i] = bacon_idx_reversed[alpha_representation]
+            try:
+                grouped_text[i] = bacon_idx_reversed[alpha_representation]
+            except KeyError:
+                return {
+                    'text': f"'{grouped_text[i]}' can't be recognized by the Bacon Index because it contains a binary that more than 10111",
+                    'success': False
+                }
 
         decoded_text = ''.join(grouped_text)
 
@@ -95,8 +128,8 @@ class Bac(Cipher):
         -e / --encode ---- encode
 
         ### Input
-        -t / --text ------ input text
-        -k / --key ------ key that contains 2 characters only
+        -t / --text ------ input text. Only accept alphabetic characters. Outside of it will be ignored.
+        -k / --key ------ key contains 2 characters only
 
         ### Examples
         python main.py bac -e -t 'hello'
