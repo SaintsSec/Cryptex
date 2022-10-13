@@ -23,7 +23,7 @@ def banner():
     art_txt = ''
     for a in art: art_txt += a
         
-    offset = int((art_len / 2) - (logo_len / 2))
+    offset = ' ' * int((art_len / 2) - (logo_len / 2))
     
     for item in logo:
         print(f'{offset}{item}')
