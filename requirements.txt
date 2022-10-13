@@ -1,0 +1,6 @@
+qrcode
+Cryptography
+googletrans==3.0.0
+colorama
+pillow
+numpy

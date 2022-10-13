@@ -1,7 +1,7 @@
 # Contributing to Cryptex 🤝
 Firstly, thank you for taking the time to contribute.
 <br/>
-We welcome contributions from anyone willing to improve this project or add new features. 
+We welcome contributions from anyone willing to improve this project or add new features and you may see historic contributors on the repositories page on the right-hand panel.
 <br/>
 Contribution guidelines are listed below. Please take the time to go through the guidelines and follow them so that it is easy for maintainers to merge or address your contributions. 
 </br>

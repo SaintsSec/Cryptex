@@ -37,7 +37,7 @@ class Main:
         Wrote File | {args.output if args.output else "N/A"}
         ''')
 
-        # if output then output
+        # If output then output.
         if args.output:
             with open(args.output, "w") as f:
                 f.write(f"{out['text']}")
@@ -49,11 +49,11 @@ class Main:
     
         parser.add_argument('cipher', type=str, help='The cipher name', nargs='?')
     
-        # Modes
+        # Modes.
         parser.add_argument('-e', '--encode', dest='encode', action='store_true', help="Encode mode")
         parser.add_argument('-d', '--decode', dest='decode', action='store_true', help="Decode mode")
     
-        # Input
+        # Input.
         parser.add_argument('-t', '--text', dest='text', type=str, help="The input text")
         parser.add_argument('-k', '--key', dest='key', type=str, help="The key")
         parser.add_argument('-ex', '--exclude', dest='exclude', type=str, help="The exclude list")
@@ -102,7 +102,7 @@ class Main:
 
         Main.output(func(args), args)
 
-# function to help with printing the list of ciphers
+# Function to help with printing the list of ciphers.
 def add_extra(str, max, char):
     ammount = max - len(str)
     if ammount <= 0:
@@ -112,23 +112,23 @@ def add_extra(str, max, char):
     return str
 
 def print_ciphers(cipher_list):
-    # dictionary of all the types
+    # Dictionary of all the types.
     cipher_types = {}
 
-    # loop over all the ciphers
+    # Loop over all the ciphers.
     for name in cipher_list:
-        # get the cipher type
+        # Get the cipher type.
         type = cipher_list[name].type
-        # check if type is in dict, if not then add it
+        # Check if type is in dict, if not then add it.
         if not type in cipher_types:
             cipher_types[type] = []
-        # add cipher long name and short name to list of that ciphers type
+        # Add cipher long name and short name to list of that ciphers type.
         cipher_types[type].append([cipher_list[name].name, name])
             
-    # print cryptex banner
+    # Print cryptex banner.
     banner()
 
-    # Printing magic
+    # Printing magic.
     line = add_extra('', 37, '-')
     for key in cipher_types:
         print('|' + add_extra(f'-- {key}s', len(line), '-') + "|-- short name ------|")
@@ -137,7 +137,7 @@ def print_ciphers(cipher_list):
     print('|' + line + '|' + add_extra('', 20, '-') +'|')
 
 if __name__ == '__main__':
-    # Check if there are args
+    # Check if there are args.
     try:
         sys.argv[1]
     except IndexError:
@@ -149,7 +149,7 @@ if __name__ == '__main__':
     import cipher
     cipher_list = {cls.__name__.lower(): cls for cls in cipher.Cipher.__subclasses__()}
 
-    # If there are no args, exit
+    # If there are no args, exit.
     if not args_exist:
         print_ciphers(cipher_list)
         # print('List of ciphers:\n')
@@ -160,7 +160,7 @@ if __name__ == '__main__':
 
     args = Main.parse_args()
 
-    # idk... just in case
+    # idk... just in case?
     if not args:
         sys.exit("Something went wrong...")
 
