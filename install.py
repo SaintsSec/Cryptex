@@ -4,6 +4,7 @@
 # Imports.
 import sys # System stuff.
 import os # Operating System functions.
+from colorama import Fore
 
 class Distros:
     @staticmethod
@@ -23,8 +24,7 @@ class Distros:
         return Distros.debian()
 
 def handle_distros():
-    ans=input(">_ What is your operating system?: ").lower()
-
+    ans=input(f"{Fore.YELLOW}>_ {Fore.CYAN}What is your operating system?: {Fore.WHITE}").lower()
     if 'debian' in ans:
         return Distros.debian()
     elif 'arch' in ans:
@@ -32,7 +32,7 @@ def handle_distros():
     elif 'void' in ans:
         return Distros.void()
     
-    print(f'Unsuported distro: {ans}')
+    print(f'\n\t{Fore.RED}Unsuported distro: {Fore.WHITE}{ans}\n')
     return None
 
 def check_shell_config(location):
@@ -50,38 +50,36 @@ def handle_shell():
     elif 'zsh' in shell:
         path = f'{user}/.zshrc'
     else:
-        print(f'Unsuported shell: {shell}')
+        print(f'\n\t{Fore.RED}Unsuported shell: {Fore.WHITE}{shell}\n')
         exit(1)
 
     if check_shell_config(path):
-        print(f'\nAlias already exists in {path}\n')
+        print(f'\n\t{Fore.BLUE}Alias already exists in config: {Fore.WHITE}{path}\n')
         return ''
 
     return f'{command} >> {path}'
     
 def main():
-    print("""
-        - Debian
-            (if below type 'Debian')
-            - Parrot
-            - Ubuntu
-            - Kali
-            - Mint
-        - Arch
-            (if bellow type 'Arch'
-            - Garuda
-            - Manjaro 
-        - Void
-        
-        **Case sensitive**
+    print(f"""
+        {Fore.GREEN}- Debian
+            {Fore.WHITE}(if below type 'Debian')
+            {Fore.YELLOW}- Parrot
+            {Fore.YELLOW}- Ubuntu
+            {Fore.YELLOW}- Kali
+            {Fore.YELLOW}- Mint
+        {Fore.GREEN}- Arch
+            {Fore.WHITE}(if bellow type 'Arch'
+            {Fore.YELLOW}- Garuda
+            {Fore.YELLOW}- Manjaro 
+        {Fore.GREEN}- Void{Fore.WHITE}
         """)
 
     commands = []
 
-    disto_cmds = None
-    while disto_cmds == None:
+    distro_cmds = None
+    while distro_cmds == None:
         distro_cmds = handle_distros()
-    commands += disto_cmds
+    commands += distro_cmds
     commands += [
         'pip install -r requirements.txt',
         'rm -rf ~/.Cryptex',
@@ -91,17 +89,21 @@ def main():
     commands += [handle_shell()]
 
     for c in commands:
-        print(f'RUNNING: {c}')
+        if len(c) <= 0: continue
+        print(f'\n\t{Fore.GREEN}RUNNING: {Fore.WHITE}{c}\n')
         os.system(c)
     
-    print("Installation finished.\nRestart the terminal and type 'cryptex' to run the program")
+    print(f"""
+    {Fore.GREEN}Installation finished.
+    Restart the terminal and type {Fore.YELLOW}cryptex {Fore.GREEN}to run the program{Fore.WHITE}
+    """)
     exit()
 
 if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-        print('\nYou interrupted the program.')
+        print('\n{Fore.YELLOW}You interrupted the program.{Fore.WHITE}')
         try:
             sys.exit(0)
         except SystemExit:
