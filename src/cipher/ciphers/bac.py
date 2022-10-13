@@ -52,6 +52,7 @@ class Bac(Cipher):
 
     def decode(args):
         ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        use_default_key = True
         char1 = 'A'  # Default key
         char2 = 'B'  # Default key
         text = args.text
@@ -63,9 +64,11 @@ class Bac(Cipher):
             text = text.upper()
 
         if key != None:
+            use_default_key = False
             key = key.upper()
             if len(key) == 0:
                 key = char1+char2
+                use_default_key = True
             elif len(key) == 1 or len(key) > 2:
                 return {'text': "Key must be 2 characters", 'success': False}
             elif len(key) == 2:
@@ -83,7 +86,10 @@ class Bac(Cipher):
             elif not c.isalpha():
                 continue
             else:
-                return {'text': f"Key '{args.key}' and encoded text '{args.text}' is not matched", 'success': False}
+                return {
+                    'text': f"Key '{key if use_default_key else args.key}' and encoded text '{args.text}' is not matched",
+                    'success': False
+                }
 
         text = ''.join(clean_text)
 
