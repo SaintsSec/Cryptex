@@ -1,5 +1,4 @@
 import os
-import subprocess
 import sys
 from vars import banner
 
@@ -19,8 +18,9 @@ class Main:
             mode = "Encode"
         
         if args.layered:
-            with open("intermediate.txt", "w") as f:
+            with open("intermediate_out.txt", "w") as f:
                 f.write(out['text'])
+            return
 
         banner()
         if args.cipher == 'pswd':
@@ -32,6 +32,12 @@ class Main:
         ----
         ''')
             return
+
+        if args.layered != True and os.path.exists("intermediate_in.txt"):
+            with open("intermediate_in.txt", "r") as f:
+                data = f.readlines()
+                data = "".join(data)
+                args.text = data
 
         print(
         f'''
@@ -106,8 +112,9 @@ class Main:
         elif args.decode:
             func = module.decode
         else:
+            print('No mode selected. see the help menu for more info')
             module.print_options()
-            sys.exit("Please select a mode\nTry --help or -h for more information")
+            sys.exit()
 
         Main.output(func(args), args)
 
@@ -145,6 +152,32 @@ def print_ciphers(cipher_list):
             print('|      ' + add_extra(item[0], 30, ' ') + f' |      {item[1]} \t   |')
     print('|' + line + '|' + add_extra('', 20, '-') +'|')
 
+def get_script_path():
+    # get the path of the cryptex script if not found then fallback to "./src"
+    try:
+        cryptex_path = os.environ['CRYPTEX_PATH']
+    except KeyError:
+        cryptex_path = "./src"
+    return cryptex_path
+
+def start_layered_sequence():
+    try:
+        text = sys.argv[sys.argv.index('-t') + 1]
+        sys.argv[sys.argv.index('-t') + 1] = f'"{text}"'
+    except ValueError:
+        text = "N/A"
+        pass
+        
+    with open("intermediate_in.txt", "w") as f:
+        f.write(text)
+
+def end_layered_sequence():
+    if os.path.exists('intermediate_in.txt'):
+        os.remove('intermediate_in.txt')
+    if os.path.exists('intermediate_out.txt'):
+        os.remove('intermediate_out.txt')
+
+
 if __name__ == '__main__':
     # Check if there are args
     try:
@@ -168,11 +201,8 @@ if __name__ == '__main__':
         sys.exit("Please enter an argument when using this command.\nTry --help or -h for more information")
 
     if '+' in sys.argv:
-        try:
-            text = sys.argv[sys.argv.index('-t') + 1]
-            sys.argv[sys.argv.index('-t') + 1] = f'"{text}"'
-        except ValueError:
-            pass
+        script_path = get_script_path()
+        start_layered_sequence()
 
         args = " ".join(sys.argv[1:])
         layers = args.split(' + ')
@@ -187,31 +217,14 @@ if __name__ == '__main__':
             
             print(f'Layer: {layer}')
 
-            proc = subprocess.Popen(f'python3 ./src/main.py {layer}', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            out, err = proc.communicate()
+            os.system(f'python3 {script_path}/main.py {layer}')
 
-            if err:
-                print(err.decode())
-                sys.exit()
-
-            previous_output = open('intermediate.txt', 'r').read()
+            previous_output = open('intermediate_out.txt', 'r').read()
 
             print(previous_output)
 
-            if index == len(layers) - 1:
-                print(out.decode())
-        os.remove('intermediate.txt')
+        end_layered_sequence()
 
     else:
         args = Main.parse_args()
         Main.run(args, cipher_list)
-
-
-    #args = Main.parse_args()
-
-    ## idk... just in case
-    #if not args:
-    #    sys.exit("Something went wrong...")
-
-    #Main.run(args, cipher_list)
-    
