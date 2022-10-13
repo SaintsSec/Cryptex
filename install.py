@@ -46,16 +46,17 @@ def handle_shell():
     path = ''
 
     message = f'\n\t\t{Fore.RED}Unsuported shell'
-    supported = ['bash', 'zsh']
+    supported = ['bash', 'zsh', 'fish']
     for s in supported:
         if s in shell:
             message = ''
             break
+    shells = ''
+    for s in supported:
+        shells += f'\n\t{Fore.GREEN}- {s}'
     print(f"""
         {Fore.GREEN}- auto
-            {Fore.YELLOW}- {shell}{message} 
-        {Fore.GREEN}- bash
-        {Fore.GREEN}- zsh
+            {Fore.YELLOW}- {shell}{message}{shells}
     {Fore.WHITE}""")
 
     ans = ''
@@ -71,6 +72,8 @@ def handle_shell():
         path = f'{user}/.bashrc'
     elif 'zsh' in shell:
         path = f'{user}/.zshrc'
+    elif 'fish' in shell:
+        path = f'{user}/.config/fish/config.fish'
     else:
         print(f'\n\t{Fore.RED}Unsuported shell: {Fore.WHITE}{shell}\n')
         exit(1)
