@@ -57,7 +57,7 @@ def check_shell_config(location):
     
 def handle_shell():
     shell = os.environ['SHELL']
-    command = 'echo "alias cryptex="python3 ~/.Cryptex/src/main.py"' 
+    command = 'echo \'alias cryptex="python3 ~/.Cryptex/src/main.py"\'' 
     path = ''
     user = os.environ['HOME']
     if 'bash' in shell:
@@ -87,6 +87,7 @@ def main():
     commands += [handle_shell()]
 
     for c in commands:
+        print(f'RUNNING: {c}')
         os.system(c)
     
     print("Installation finished.\nRestart the terminal and type 'cryptex' to run the program")
