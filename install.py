@@ -23,21 +23,6 @@ class Distros:
         return Distros.debian()
 
 def handle_distros():
-    print("""
-        - Debian
-            (if below type 'Debian')
-            - Parrot
-            - Ubuntu
-            - Kali
-            - Mint
-        - Arch
-            (if bellow type 'Arch'
-            - Garuda
-            - Manjaro 
-        - Void
-        
-        **Case sensitive**
-        """)
     ans=input(">_ What is your operating system?: ").lower()
 
     if 'debian' in ans:
@@ -48,7 +33,7 @@ def handle_distros():
         return Distros.void()
     
     print(f'Unsuported distro: {ans}')
-    exit(1)
+    return None
 
 def check_shell_config(location):
     with open(location, 'rt') as f:
@@ -75,9 +60,28 @@ def handle_shell():
     return f'{command} >> {path}'
     
 def main():
+    print("""
+        - Debian
+            (if below type 'Debian')
+            - Parrot
+            - Ubuntu
+            - Kali
+            - Mint
+        - Arch
+            (if bellow type 'Arch'
+            - Garuda
+            - Manjaro 
+        - Void
+        
+        **Case sensitive**
+        """)
+
     commands = []
 
-    commands += handle_distros()
+    disto_cmds = None
+    while disto_cmds == None:
+        distro_cmds = handle_distros()
+    commands += disto_cmds
     commands += [
         'pip install -r requirements.txt',
         'rm -rf ~/.Cryptex',
