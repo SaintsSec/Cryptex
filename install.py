@@ -25,8 +25,57 @@ class Distros:
         return Distros.debian()
 
 def handle_distros():
-    # distro selector
-    ans=input(f"{Fore.YELLOW}>_ {Fore.CYAN}What is your operating system?: {Fore.WHITE}").lower()
+    # Distros
+    distros = {
+        'Debian': [
+            'Parrot',
+            'Ubuntu',
+            'Kali',
+            'Mint',
+        ],
+        'Arch': [
+            'Garuda',
+            'Manjaro',
+        ],
+        'Void' : [],
+    }
+
+    # auto detect
+    distro = os.popen('cat /etc/issue').read()
+    auto = f'{Fore.RED}- Unsupported disto'
+    for k, v in distros.items():
+        if k.lower() in distro.lower():
+            auto = f'{Fore.YELLOW}- {k}'
+            break
+        else:
+            txt = ''
+            for sub in v:
+                if sub.lower() in distro.lower():
+                    txt = f'{Fore.YELLOW}- {k} ({sub})'
+                    break
+            if txt != '':
+                auto = txt
+                break
+
+    message = ''
+    for key, val in distros.items():
+        message += f'\n\t- {Fore.GREEN}{key}'
+        for sub in val:
+            message += f'\n\t    - {Fore.YELLOW}{sub}'
+    
+    print(f"""
+        {Fore.GREEN}- auto
+            {auto}{message}
+        {Fore.WHITE}""")
+
+    ans = ''
+    while not ans in [k.lower() for k, _ in distros.items()] + ['auto']: 
+        # user input to select a distro
+        ans=input(f"{Fore.YELLOW}>_ {Fore.CYAN}What is your operating system?: {Fore.WHITE}").lower()
+
+    if 'auto' in ans:
+        ans = auto.split('- ')[1].lower()
+
     if 'debian' in ans:
         return Distros.debian()
     elif 'arch' in ans:
@@ -35,7 +84,7 @@ def handle_distros():
         return Distros.void()
     
     print(f'\n\t{Fore.RED}Unsuported distro: {Fore.WHITE}{ans}\n')
-    return None
+    exit(1)
 
 def check_shell_config(location):
     # check if the cryptex alias is in the given file
@@ -95,29 +144,11 @@ def handle_shell():
     return f'{command} >> {path}'
     
 def main():
-    # Distro list
-    print(f"""
-        {Fore.GREEN}- Debian
-            {Fore.WHITE}(if below type 'Debian')
-            {Fore.YELLOW}- Parrot
-            {Fore.YELLOW}- Ubuntu
-            {Fore.YELLOW}- Kali
-            {Fore.YELLOW}- Mint
-        {Fore.GREEN}- Arch
-            {Fore.WHITE}(if bellow type 'Arch'
-            {Fore.YELLOW}- Garuda
-            {Fore.YELLOW}- Manjaro 
-        {Fore.GREEN}- Void{Fore.WHITE}
-        """)
 
     # List over commands to run
     commands = []
 
-    # The distro spesific commands
-    distro_cmds = None
-    while distro_cmds == None:
-        distro_cmds = handle_distros()
-    commands += distro_cmds
+    commands += handle_distros()
 
     # Cryptex related commands
     commands += [
