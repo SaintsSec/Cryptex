@@ -41,9 +41,31 @@ def check_shell_config(location):
     return check
     
 def handle_shell():
-    shell = os.environ['SHELL']
+    shell = os.readlink(f'/proc/{os.getppid()}/exe')
     command = 'echo \'alias cryptex="python3 ~/.Cryptex/src/main.py"\'' 
     path = ''
+
+    message = f'\n\t\t{Fore.RED}Unsuported shell'
+    supported = ['bash', 'zsh']
+    for s in supported:
+        if s in shell:
+            message = ''
+            break
+    print(f"""
+        {Fore.GREEN}- auto
+            {Fore.YELLOW}- {shell}{message} 
+        {Fore.GREEN}- bash
+        {Fore.GREEN}- zsh
+    {Fore.WHITE}""")
+
+    ans = ''
+    options = ['auto'] + supported
+    while ans not in options:
+        ans=input(f"{Fore.YELLOW}>_ {Fore.CYAN}What is your shell?: {Fore.WHITE}").lower()
+
+    if 'auto' not in ans:
+        shell = ans
+        
     user = os.environ['HOME']
     if 'bash' in shell:
         path = f'{user}/.bashrc'
@@ -103,7 +125,7 @@ if __name__ == '__main__':
     try:
         main()
     except KeyboardInterrupt:
-        print('\n{Fore.YELLOW}You interrupted the program.{Fore.WHITE}')
+        print(f'\n{Fore.YELLOW}You interrupted the program.{Fore.WHITE}')
         try:
             sys.exit(0)
         except SystemExit:
