@@ -1,5 +1,5 @@
 import sys
-from vars import banner, patch_art
+from vars import banner
 
 class Main:    
     def output(out, args):
@@ -17,7 +17,6 @@ class Main:
             mode = "Encode"
         
         banner()
-        patch_art()
         if args.cipher == 'pswd':
             print(
             f'''
@@ -128,7 +127,6 @@ def print_ciphers(cipher_list):
             
     # print cryptex banner
     banner()
-    patch_art()
 
     # Printing magic
     line = add_extra('', 37, '-')
