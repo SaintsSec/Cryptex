@@ -13,9 +13,9 @@
 
 ## 📖 History
 Cryptex started out in November 2021 with one developer Alex "cythes" Kollar as an attempt to be less of a script kiddy.
-It has since became so much more. In April of 2022 the official cryptex Development Team formed. Many great devs nave come and gone from the project as life often has a way of bringing people together and pushing them away. Through it all Cryptex persists. The project and team has evolved so much in just the little time it has existed. Going from a Hodge-podge of unoptimized slap together tools being coded by devs ranging from beginners to advanced. All of this resulting a fully functional professional grade tool and a passionate community behind it. We as a team are incredibly proud and we feel its shows in our work.    
+It has since became so much more. As of april 2022 Alex decided to open the project up to the SSG community to some absolutely incredible results. The SSG | Cryptex Dev Team was founded with a the idea of building cryptex into a tool that people could use and add to with ease. Similar to metasploit. The project and team has evolved so much in just the little time it has existed. Cryptex itself maturing from Alex's seventeen original Hodge-podge of unoptimized slap together tools to now being coded by devs ranging from beginners to advanced. All of this resulting a fully functional professional grade tool and a passionate community behind it. We as a team are incredibly proud and we feel its shows in our work.    
 
-As of the Pumpkin Patch 00 release the core dev team has taken a step back and completely refactored the tool to work with object oriented Programming. As well as making it easier to implement new Ciphers
+As of the Pumpkin Patch 00 release the dev team has taken a step back and completely refactored the tool to work with object oriented Programming. As well as making it easier to implement new Ciphers
 and tools into the program it self. Pushing it ever closer to its goal of becoming the `metaploit of cryptography`  
       
 ## 🛠️Basic Help:
