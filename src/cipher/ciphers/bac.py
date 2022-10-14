@@ -9,7 +9,7 @@ class Bac(Cipher):
     This chiper uses 26 alphabets version.
     """
     name = 'Baconian Chiper'
-    type = 'chiper'
+    type = 'cipher'
 
     def encode(args):
         ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
