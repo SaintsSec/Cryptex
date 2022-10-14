@@ -15,7 +15,7 @@
 Cryptex started out in November 2021 with one developer Alex "cythes" Kollar as an attempt to be less of a script kiddy.
 It has since became so much more. As of april 2022 Alex decided to open the project up to the SSG community to some absolutely incredible results. At this point the SSG | Cryptex Dev Team was founded with a the idea of building cryptex into a cryptography tool that people could use, install and add to with ease. Similar to metasploit. The project and team has evolved so much in just the little time it has existed.  
   
-Cryptex itself maturing from Alex's seventeen original Hodge-podge of unoptimized tools, to what is now a professional grade cryptography toolkit. Cryptex is backed by a passionate team of devs ranging from beginners looking for a place to start to advanced devs who want a challenge. We even have a few idea men who come up with whacky encryption ideas for us to try to impliment. (Static Encryption. Go check it out.) Last but 110% not least our sponors who believe in he project enough to financially back us. 
+Cryptex itself maturing from Alex's seventeen original Hodge-podge of unoptimized tools, to what is now a professional grade cryptography toolkit. Cryptex is backed by a passionate team of devs ranging from beginners looking for a place to start to advanced devs who want a challenge. We even have a few idea men who come up with whacky encryption ideas for us to try to impliment. (Static Encryption. Go check it out.) Last but 110% not least our sponors who believe in the project enough to financially back us. 
   
 ## 🗓️ Upcoming Release
 ### Cryptex Beta V0.1.0 - Pumpkin Patch 00  
