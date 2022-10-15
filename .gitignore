@@ -128,3 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 src/qrout001.png
+
+# VSCode
+.vscode/
