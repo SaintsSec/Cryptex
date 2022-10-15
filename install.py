@@ -144,6 +144,9 @@ def handle_shell():
     return f'{command} >> {path}'
     
 def main():
+    # Check for updates
+    from src import Update
+    Update()
 
     # List over commands to run
     commands = []

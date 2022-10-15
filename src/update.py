@@ -1,38 +1,48 @@
 import os
 import requests
+from colorama import Fore
 
 class Update:
-    def __init__(self, branch):
-        self.branch = branch
+    def __init__(self):
+        # Get branch name
+        self.branch = os.popen('git -C . rev-parse --abbrev-ref HEAD').read().split('\n')[0]
 
-    def run(self) -> bool:
         self.getFolder()
-        self.getOnlineVersion(f'https://raw.githubusercontent.com/SSGorg/Cryptex/{self.branch}/version')
+        
+        self.getOnlineVersion()
         self.getLocalVersion()
-        print(self.onlineVersion, self.localVersion)
 
-        self.onlineVersion = self.parseVersion(self.onlineVersion)
-        self.localVersion = self.parseVersion(self.localVersion)
-        print(self.onlineVersion, self.localVersion)
+        self.formatedOnlineVersion = self.parseVersion(self.onlineVersion)
+        self.formatedLocalVersion = self.parseVersion(self.localVersion)
 
         new_version_availiable = self.compareVersions()
 
         if not new_version_availiable:
-            print('No new version availiable')
+            print(f'{Fore.YELLOW}No new version availiable{Fore.WHITE}')
             return False
+
+        print(f'''
+            {Fore.GREEN}There is a new update availiable
+            {Fore.YELLOW}Current version: {self.localVersion}
+            {Fore.YELLOW}Newer version: {self.onlineVersion}
+        {Fore.WHITE}''')
         
-        ans=input('>_ There is a new version of Cryptex availiable, do you want to update? (Y/n) : ')
+        self.updatePrompt()
+        return True
+
+    def updatePrompt(self):
+        ans=input(f'{Fore.YELLOW}>_ {Fore.CYAN}There is a new version of Cryptex availiable, do you want to update? (Y/n) :{Fore.WHITE} ')
         if 'n' in ans.lower():
-            print('Not updating')
+            print(f'{Fore.YELLOW}Not updating{Fore.WHITE}')
             return False
 
         os.system(f'git -C {self.folder_path} pull')
-        return True
-
+    
     def compareVersions(self):
-        return self.onlineVersion > self.localVersion
+        return self.formatedOnlineVersion > self.formatedLocalVersion
 
-    def getOnlineVersion(self, url):
+    def getOnlineVersion(self):
+        url = f'https://raw.githubusercontent.com/SSGorg/Cryptex/{self.branch}/version'
         response = requests.get(url)
         self.onlineVersion = response.text.split('\n')[0]
 
@@ -48,5 +58,5 @@ class Update:
         try:
             return int(formated)
         except ValueError:
-            print(f'ERROR: Failed to get number from {versionString} formatted to {formated}')
+            print(f'{Fore.RED}ERROR: Failed to get number from {versionString} formatted to {formated}')
             exit(1)
