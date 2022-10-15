@@ -1,4 +1,5 @@
 import os
+import requests
 
 class Update:
     def __init__(self, branch):
@@ -6,7 +7,7 @@ class Update:
 
     def run(self) -> bool:
         self.getFolder()
-        self.getOnlineVersion('')
+        self.getOnlineVersion(f'https://raw.githubusercontent.com/SSGorg/Cryptex/{self.branch}/version')
         self.getLocalVersion()
         print(self.onlineVersion, self.localVersion)
 
@@ -32,7 +33,8 @@ class Update:
         return self.onlineVersion > self.localVersion
 
     def getOnlineVersion(self, url):
-        self.onlineVersion = "0.0.1"
+        response = requests.get(url)
+        self.onlineVersion = response.text.split('\n')[0]
 
     def getFolder(self):
         self.folder_path = os.path.abspath(os.path.dirname(__file__))

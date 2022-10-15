@@ -74,7 +74,7 @@ class Main:
     def run(args, cipher_list):
         if args.update:
             import update
-            update.Update('main').run()
+            update.Update('updating').run()
             exit(0)
         
         if not args.cipher:
