@@ -93,7 +93,7 @@ Try --help or -h for more information
 ```
 ## 🖐️ Get in touch
 ### You can join in on chatting with the dev team on our discord server
-  <a href="https://discord.gg/899KQFeAXrF"><img src="https://discordapp.com/api/guilds/879757204620726362/widget.png?style=banner3" alt="Discord Server"></a>
+  <a href="https://discord.gg/899KQFeAXr"><img src="https://discordapp.com/api/guilds/879757204620726362/widget.png?style=banner3" alt="Discord Server"></a>
   
 ## 🔧 Issues
 If you face any problems while using the application, please open an issue here
