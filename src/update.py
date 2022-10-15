@@ -37,6 +37,8 @@ class Update:
             return False
 
         os.system(f'git -C {self.folder_path} pull')
+        print(f'{Fore.GREEN}Updated!')
+        exit(0)
     
     def compareVersions(self):
         return self.formatedOnlineVersion > self.formatedLocalVersion
