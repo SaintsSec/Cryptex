@@ -1,6 +1,8 @@
 import argparse
 import itertools
 import sys
+from typing import List
+
 from vars import banner
 
 
@@ -109,7 +111,7 @@ class ArgumentParser:
 
         return args
 
-    def parse_string(self, string: list[str]) -> argparse.Namespace:
+    def parse_string(self, string: List[str]) -> argparse.Namespace:
         sys.argv = [" "] + string
         parsed_args = self.__run()
         return parsed_args
