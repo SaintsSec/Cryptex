@@ -132,7 +132,7 @@ class Controller:
         except ValueError:
             first_text = "N/A"
 
-        layers = [list(y) for x, y in itertools.groupby(sys.argv[1:], lambda z: z == "+") if not x]
+        layers = [[s.replace('"', '') for s in list(y)] for x, y in itertools.groupby(sys.argv[1:], lambda z: z == "+") if not x]
 
         for layer in layers:
             args = self.parser.parse_string(layer)
