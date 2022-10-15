@@ -7,10 +7,11 @@ class AK(Cipher):
 
     def encode(args):
         output = ''
-        text = args.text
+        text = args.text.lower()
         key = args.key
-        new_key = key + text 
         exclude = args.exclude if args.exclude else "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789"
+        new_key = ''
+        temp =  key + text
 
         if not text:
             return {'text': "No input text", 'success': False}
@@ -18,17 +19,20 @@ class AK(Cipher):
         if not key:
             return {'text': "No shift key", 'success': False}
 
+        for k in temp:
+            if k not in exclude:
+                new_key += k
+
         output = []
         i = 0
-        for character in text:
-            if character in exclude:
-                output.append(character)
+        for c in text:
+            if c in exclude:
+                output.append(c)
             else:
-                x = ((ord(character) % 97) + (ord(new_key[i]) % 97)) % 26  
+                x = ((ord(c) % 97) + (ord(new_key[i]) % 97)) % 26  
                 x += ord('a')
-
-            output.append(chr(x))
-            i = i + 1
+                i += 1
+                output.append(chr(x))
 
         return {'text': "".join(output), 'success': True}
 
@@ -37,6 +41,7 @@ class AK(Cipher):
         text = args.text
         key = args.key
         exclude = args.exclude if args.exclude else "\n\t .?!,/\\<>|[]{}@#$%^&*()-_=+`~:;\"'0123456789"
+        new_key = ''
 
         if not text:
             return {'text': "No input text", 'success': False}
@@ -44,18 +49,21 @@ class AK(Cipher):
         if not key:
             return {'text': "No shift key", 'success': False}
 
-        output = []
+        for k in key:
+            if k not in exclude:
+                new_key += k
 
+        output = []
         i = 0
-        for character in text:
-            if character in exclude:
-                output.append(character)
+        for c in text:
+            if c in exclude:
+                output.append(c)
             else:
-                x = ((ord(character) % 97) - (ord(key[i]) % 97)) % 26  
+                x = ((ord(c) % 97) - (ord(new_key[i]) % 97)) % 26  
                 x += ord('a')
-            output.append(chr(x))
-            key += chr(x)
-            i += 1
+                output.append(chr(x))
+                new_key += chr(x)
+                i += 1
 
         return {'text': "".join(output), 'success': True}
 
