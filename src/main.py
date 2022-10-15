@@ -52,6 +52,7 @@ class Main:
         # Modes.
         parser.add_argument('-e', '--encode', dest='encode', action='store_true', help="Encode mode")
         parser.add_argument('-d', '--decode', dest='decode', action='store_true', help="Decode mode")
+        parser.add_argument('--update', dest='update', action='store_true', help="Update Cryptex")
     
         # Input.
         parser.add_argument('-t', '--text', dest='text', type=str, help="The input text")
@@ -71,6 +72,10 @@ class Main:
         return args
 
     def run(args, cipher_list):
+        if args.update:
+            import update
+            update.Update().run()
+            exit(0)
         
         if not args.cipher:
             sys.exit('No cipher selected.')
