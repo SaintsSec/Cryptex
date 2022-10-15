@@ -5,7 +5,9 @@ from vars import banner
 import update
 from colorama import Fore
 
-if __name__ == "__main__":
+def run():
+    update.Update()
+    
     # Check if there are args
     try:
         sys.argv[1]
@@ -24,3 +26,13 @@ if __name__ == "__main__":
         controller.cli.print_ciphers()
         sys.exit("Please enter an argument when using this command.\nTry --help or -h for more information")
     controller.run()
+
+if __name__ == '__main__':
+    try:
+        run()
+    except KeyboardInterrupt:
+        print(f'\n{Fore.YELLOW}You interrupted the program.{Fore.WHITE}')
+        try:
+            sys.exit(0)
+        except SystemExit:
+            os._exit(0)
