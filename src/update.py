@@ -1,8 +1,8 @@
 import os
 
 class Update:
-    def __init__(self):
-        pass
+    def __init__(self, branch):
+        self.branch = branch
 
     def run(self) -> bool:
         self.getFolder()
