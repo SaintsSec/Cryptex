@@ -1,10 +1,16 @@
+import update
+
 def banner():
+    version = update.Update.getLocalVersion(update.Update.getFolder())
+    spacing = len(version) - 5
+    if spacing < 0: spacing = 0
+    spacing = ' ' * spacing
     logo = [
-        '  _____              __         ',
-        ' / ___/_____ _____  / /______ __',
-        '/ /__/ __/ // / _ \\/ __/ -_) \\ /',
-        '\\___/_/  \\_, / .__/\\__/\\__/_\\_\\ ',
-        ' V:0.0.1/___/_/  OOP Edition    ',
+        f'{spacing}  _____              __         ',
+        f'{spacing} / ___/_____ _____  / /______ __',
+        f'{spacing}/ /__/ __/ // / _ \\/ __/ -_) \\ /',
+        f'{spacing}\\___/_/  \\_, / .__/\\__/\\__/_\\_\\ ',
+        f' V:{version}/___/_/  OOP Edition    ',
         ' Locks only exist to keep honest',
         '          people honest         ',
     ]

@@ -5,12 +5,12 @@ from colorama import Fore
 class Update:
     def __init__(self):
         # Get branch name
-        self.branch = os.popen('git -C . rev-parse --abbrev-ref HEAD').read().split('\n')[0]
+        self.folder_path = Update.getFolder()
 
-        self.getFolder()
+        self.branch = os.popen(f'git -C {self.folder_path} rev-parse --abbrev-ref HEAD').read().split('\n')[0]
         
         self.getOnlineVersion()
-        self.getLocalVersion()
+        self.localVersion = Update.getLocalVersion(self.folder_path)
 
         self.formatedOnlineVersion = self.parseVersion(self.onlineVersion)
         self.formatedLocalVersion = self.parseVersion(self.localVersion)
@@ -19,7 +19,7 @@ class Update:
 
         if not new_version_availiable:
             print(f'{Fore.YELLOW}No new version availiable{Fore.WHITE}')
-            return False
+            return
 
         print(f'''
             {Fore.GREEN}There is a new update availiable
@@ -28,7 +28,7 @@ class Update:
         {Fore.WHITE}''')
         
         self.updatePrompt()
-        return True
+        return
 
     def updatePrompt(self):
         ans=input(f'{Fore.YELLOW}>_ {Fore.CYAN}There is a new version of Cryptex availiable, do you want to update? (Y/n) :{Fore.WHITE} ')
@@ -46,12 +46,14 @@ class Update:
         response = requests.get(url)
         self.onlineVersion = response.text.split('\n')[0]
 
-    def getFolder(self):
-        self.folder_path = os.path.abspath(os.path.dirname(__file__))
+    @staticmethod
+    def getFolder():
+        return os.path.abspath(os.path.dirname(__file__))
 
-    def getLocalVersion(self):
-        with open(self.folder_path + '/../version', 'rt') as f:
-            self.localVersion = f.read().split('\n')[0]
+    @staticmethod
+    def getLocalVersion(folder_path):
+        with open(folder_path + '/../version', 'rt') as f:
+            return f.read().split('\n')[0]
 
     def parseVersion(self, versionString) -> str:
         formated = ''.join(versionString.split('.'))
