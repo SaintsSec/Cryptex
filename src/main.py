@@ -1,5 +1,8 @@
 import sys
+import os
 from vars import banner
+import update
+from colorama import Fore
 
 class Main:    
     def output(out, args):
@@ -52,6 +55,7 @@ class Main:
         # Modes.
         parser.add_argument('-e', '--encode', dest='encode', action='store_true', help="Encode mode")
         parser.add_argument('-d', '--decode', dest='decode', action='store_true', help="Decode mode")
+        parser.add_argument('--update', dest='update', action='store_true', help="Update Cryptex")
     
         # Input.
         parser.add_argument('-t', '--text', dest='text', type=str, help="The input text")
@@ -71,6 +75,9 @@ class Main:
         return args
 
     def run(args, cipher_list):
+        if args.update:
+            update.Update()
+            exit(0)
         
         if not args.cipher:
             sys.exit('No cipher selected.')
@@ -136,7 +143,10 @@ def print_ciphers(cipher_list):
             print('|      ' + add_extra(item[0], 30, ' ') + f' |      {item[1]} \t   |')
     print('|' + line + '|' + add_extra('', 20, '-') +'|')
 
-if __name__ == '__main__':
+def run():
+    # check for updates
+    update.Update()
+    
     # Check if there are args.
     try:
         sys.argv[1]
@@ -163,6 +173,15 @@ if __name__ == '__main__':
     # idk... just in case?
     if not args:
         sys.exit("Something went wrong...")
-
-    Main.run(args, cipher_list)
     
+    Main.run(args, cipher_list)
+
+if __name__ == '__main__':
+    try:
+        run()
+    except KeyboardInterrupt:
+        print(f'\n{Fore.YELLOW}You interrupted the program.{Fore.WHITE}')
+        try:
+            sys.exit(0)
+        except SystemExit:
+            os._exit(0)
