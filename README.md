@@ -13,14 +13,24 @@
 
 ## 📖 History
 Cryptex started out in November 2021 with one developer Alex "cythes" Kollar as an attempt to be less of a script kiddy.
-It has since became so much more. In April of 2022 the official cryptex Development Team formed. Consisting of members
-of two security groups with one common goal. To make Cryptex the Metasploit of cryptography. Since then A few great dev's
-nave come and gone from the project but Cryptex persists. If you want to know more about the previous developers go check
-out our credits page. Cryptex has evolved so much in just the little time it has existed. Going from a Hodge-podge of tools
-and scripts to being a fully functional professional grade tool.    
+It has since became so much more. As of april 2022 Alex decided to open the project up to the SSG community to some absolutely incredible results. At this point the SSG | Cryptex Dev Team was founded with a the idea of building cryptex into a cryptography tool that people could use, install and add to with ease. Similar to metasploit. The project and team has evolved so much in just the little time it has existed.  
+  
+Cryptex itself maturing from Alex's seventeen original Hodge-podge of unoptimized tools, to what is now a professional grade cryptography toolkit. Cryptex is backed by a passionate team of devs ranging from beginners looking for a place to start to advanced devs who want a challenge. We even have a few idea men who come up with whacky encryption ideas for us to try to impliment. (Static Encryption. Go check it out.) Last but 110% not least our sponors who believe in the project enough to financially back us. 
+  
+## 🗓️ Upcoming Release
+### Cryptex Beta V0.1.0 - Pumpkin Patch 00  
+After participation in Hacktoberfest 2022 we are going to put the collective updates from the event into a new realease. We are Dubbing the Pumpkin Patch. The plan is every year we do Hacktoberfest we will add a new Pumpkin Patch to Cryptex.  
+  
+Other notes: 
+- We are moving away from the Earth Invader. 
+- complete rebuild of cryptex to work with Object Oriented Programming. 
+- Its now easier to implement new Ciphers and tools.   
+- Installer has been rewritten from the ground up in python.
+- The main menu can now dynamically add ciphers and tools to the list.
+- We brought back the OG 'Cryptex UI' (We made it look pretty again)
+- Implimented a system that lets us use Ascii art for version names.
 
-As of the Pumpkin Patch 00 release the core dev team has taken a step back and completely refactored the tool to work with object oriented Programming. As well as making it easier to implement new Ciphers
-and tools into the program it self.  
+All of this is pushing Cryptex ever closer to its goal of becoming the `metaploit of cryptography`  
       
 ## 🛠️Basic Help:
 ```
@@ -83,7 +93,7 @@ Try --help or -h for more information
 ```
 ## 🖐️ Get in touch
 ### You can join in on chatting with the dev team on our discord server
-  <a href="https://discord.gg/899KQFeAXrF"><img src="https://discordapp.com/api/guilds/879757204620726362/widget.png?style=banner3" alt="Discord Server"></a>
+  <a href="https://discord.gg/899KQFeAXr"><img src="https://discordapp.com/api/guilds/879757204620726362/widget.png?style=banner3" alt="Discord Server"></a>
   
 ## 🔧 Issues
 If you face any problems while using the application, please open an issue here
