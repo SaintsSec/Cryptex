@@ -4,8 +4,29 @@ Links: https://github.com/CryptexProject | https://twitter.com/ssgcythes
 Description: A QR Generator for Cryptex
 """
 
+import qrcode
 from cipher import Cipher
-import qrcode, image
+
+
+def validate_image_extension(file: str) -> str:
+    """
+    Validate the image extension and return the correct extension
+    """
+
+    extensions = [".png", ".jpg", ".jpeg", ".bmp", ".gif"]
+    
+    # check if the file has an extension
+    if "." not in file:
+        return file + ".png"
+
+    # check if the extension is valid
+    for extension in extensions:
+        if file.endswith(extension):
+            return file
+
+    # if the extension is not valid then return the file with a png extension
+    return file + ".png"
+
 
 class qr(Cipher):
 
@@ -22,17 +43,21 @@ class qr(Cipher):
         if not text:
             return {'text': "No input text", 'success': False}
 
-        # Do stuff with input
-        #Generate the QRCode:
         qr = qrcode.QRCode(
             version=1,
             box_size=20,
-            border=1)
+            border=1,
+        )
+
         qr.add_data(text)
         qr.make(fit=True)
 
-        img = qr.make_image(fill='black', back_color='white')
+        img = qr.make_image(fill_color="black", back_color="white")
+        filename = validate_image_extension(filename)
         img.save(filename)
+
+        args.output = filename
+
         return {'text': filename, 'success': True}
 
     def print_options():
