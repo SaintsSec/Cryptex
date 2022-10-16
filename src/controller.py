@@ -3,6 +3,7 @@ import itertools
 import sys
 from typing import List
 
+from colorama import Fore
 from vars import banner
 
 
@@ -97,6 +98,7 @@ class ArgumentParser:
         # Modes
         parser.add_argument("-e", "--encode", dest="encode", action="store_true", help="Encode mode")
         parser.add_argument("-d", "--decode", dest="decode", action="store_true", help="Decode mode")
+        parser.add_argument("--test", dest="test", action="store_true", help="Run all tests")
 
         # Input
         parser.add_argument("-t", "--text", dest="text", type=str, help="The input text")
@@ -141,6 +143,33 @@ class Controller:
         for layer in layers:
             args = self.parser.parse_string(layer)
 
+            if args.test:
+                print('\n')
+                status = [0, 0]
+                for k, v in self.cipher_list.items():
+                    try:
+                        out = v.test(args)
+                    except:
+                        print(f"{Fore.YELLOW}No test for {k}{Fore.WHITE}")
+                    else:
+                        color = Fore.GREEN
+                        msg = "Success:"
+
+                        if out['status']:
+                            status[0] += 1
+                        else:
+                            status[1] += 1
+                            color = Fore.RED
+                            msg = "Failed: "
+                        print(f"{color}{msg} {k} {'-' * (15 - len(k))} {out['msg']}{Fore.WHITE}")
+
+                total = status[0] + status[1] 
+                print(f"{Fore.GREEN}Success{Fore.WHITE}/{Fore.RED}Failed {Fore.WHITE}{status[0]}/{status[1]}")
+                percent = (status[0] / total) * 100
+                print(f"Success percentage {percent}%")
+                        
+                return
+            
             if not args.cipher:
                 sys.exit("No cipher selected.")
 
