@@ -1,5 +1,5 @@
 """
-Author: @Iqrar99
+Author: @Iqrar99, @kailashchoudhary11
 Description: A basic Baconian Chiper encoder / decoder
 """
 from cipher import Cipher
@@ -63,17 +63,13 @@ class Bac(Cipher):
         else:
             text = text.upper()
 
-        if key != None:
-            use_default_key = False
-            key = key.upper()
-            if len(key) == 0:
-                key = char1+char2
-                use_default_key = True
-            elif len(key) == 1 or len(key) > 2:
+        if key is not None and len(key) != 0:
+            if len(key) != 2:
                 return {'text': "Key must be 2 characters", 'success': False}
-            elif len(key) == 2:
-                char1 = key[0]
-                char2 = key[-1]
+            else:
+                use_default_key = False
+                key = key.upper()
+                char1, char2 = key
                 if char1 == char2:
                     return {'text': f"Key '{char1}' and '{char2}' can't be similar", 'success': False}
         else:
