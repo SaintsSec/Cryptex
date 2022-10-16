@@ -44,7 +44,8 @@ class Update:
         return self.formatedOnlineVersion > self.formatedLocalVersion
 
     def getOnlineVersion(self):
-        url = f'https://raw.githubusercontent.com/SSGorg/Cryptex/{self.branch}/version'
+        user = 'bmalvo'
+        url = f'https://raw.githubusercontent.com/{user}/Cryptex/{self.branch}/version'
         response = requests.get(url)
         self.onlineVersion = response.text.split('\n')[0]
 
