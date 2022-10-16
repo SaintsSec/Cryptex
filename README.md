@@ -4,7 +4,7 @@
   <h3>Locks only exist to keep honest people honest</h3>
 </div>
 
-# Cryptex V:1.0.0 Pumpkin Patch - beta
+# V:1.0.0 Pumpkin Patch - beta
 
 <p align="center">
     <a href="https://github.com/SSGorg/Cryptex/blob/main/LICENCE"><img src="https://img.shields.io/badge/license-AGPL%20%203.0-0d1117?style=flat-square" alt="GitHub License"></a>
