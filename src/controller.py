@@ -78,6 +78,10 @@ class CLIManager:
         """
         )
 
+        # remove output file from args for qr
+        if args.cipher == "qr":
+            args.output = None
+
         # if output then output
         if args.output:
             with open(args.output, "w") as f:
