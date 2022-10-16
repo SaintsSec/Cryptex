@@ -1,16 +1,21 @@
 import update
 
 def banner():
-    version = update.Update.getLocalVersion(update.Update.getFolder())
+    localVersion = update.Update.getFullLocalVersion(update.Update.getFolder())
+
+    version = localVersion[0]
     spacing = len(version) - 5
-    if spacing < 0: spacing = 0
-    spacing = ' ' * spacing
+    spacing = ' ' * spacing if spacing > 0 else ''
+    
+    tag = f"  {localVersion[1]}"
+    tag += f" - {localVersion[2]}" if len(localVersion) > 2 else ""
+
     logo = [
         f'{spacing}  _____              __         ',
         f'{spacing} / ___/_____ _____  / /______ __',
         f'{spacing}/ /__/ __/ // / _ \\/ __/ -_) \\ /',
         f'{spacing}\\___/_/  \\_, / .__/\\__/\\__/_\\_\\ ',
-        f' V:{version}/___/_/  OOP Edition    ',
+        f' V:{version}/___/_/{tag}',
         ' Locks only exist to keep honest',
         '          people honest         ',
     ]
