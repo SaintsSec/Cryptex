@@ -53,9 +53,13 @@ class Update:
         return os.path.abspath(os.path.dirname(__file__))
 
     @staticmethod
-    def getLocalVersion(folder_path):
+    def getFullLocalVersion(folder_path):
         with open(folder_path + '/../version', 'rt') as f:
-            return f.read().split('\n')[0]
+            return f.read().split('\n')
+
+    @staticmethod
+    def getLocalVersion(folder_path):
+        return Update.getFullLocalVersion(folder_path)[0]
 
     def parseVersion(self, versionString) -> str:
         formated = ''.join(versionString.split('.'))
