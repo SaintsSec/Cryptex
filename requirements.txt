@@ -1,6 +1,6 @@
 qrcode
-Cryptography
-googletrans==3.0.0
+cryptography
+googletrans
 colorama
 pillow
 numpy

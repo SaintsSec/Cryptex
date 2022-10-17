@@ -29,21 +29,21 @@ while menu: # Prints the menu.
         os.system("sudo apt update")
         os.system("sudo apt-get install -y python3 python3-pip python-dev")
         os.system("pip install -r requirements.txt")
-        os.system('alias cryptex="python3 ~/$USERNAME\/Cryptex/src/main.py"')
+        os.system('alias cryptex="python3 /home/$USER/\Cryptex/src/main.py"')
         print("Installation finished.")
         exit()
     elif ans=="Arch": # Installs for Arch.
         os.system("sudo pacman -Syu")
         os.system("sudo pacman -S python python-pip")
         os.system("python3 -m pip install -r requirements.txt")
-        os.system('alias cryptex="python3 ~/$USERNAME\/Cryptex/src/main.py"')
+        os.system('alias cryptex="python3 /home/$USER/\Cryptex/src/main.py"')
         print("Installation finished.")
         exit()
     elif ans=="Garuda": # Installs for Garuda.
         os.system("sudo pacman -Syu")
         os.system("sudo pacman -S python python-pip")
         os.system("python3 -m pip install -r requirements.txt")
-        os.system('alias cryptex="python3 ~/$USERNAME\/Cryptex/src/main.py"')
+        os.system('alias cryptex="python3 /home/$USER/\Cryptex/src/main.py"')
         print("Installation finished.")
         exit()
     elif ans=="Void": # Installs for Void.
@@ -52,7 +52,7 @@ while menu: # Prints the menu.
         os.system("sudo apt update")
         os.system("sudo apt-get install -y python3 python3-pip python-dev")
         os.system("pip install -r requirements.txt")
-        os.system('alias cryptex="python3 ~/$USERNAME\/Cryptex/src/main.py"')
+        os.system('alias cryptex="python3 /home/$USER/\Cryptex/src/main.py"')
         print("Installation finished.")
         exit()
     ans = None

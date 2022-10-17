@@ -1,4 +1,6 @@
 import sys
+import cry
+import cryoads as crys
 from vars import banner
 
 class Main:    
@@ -9,7 +11,7 @@ class Main:
 
         if not out['success']:
             sys.exit(f'Failed to run cipher "{args.cipher}"\nError: {out["text"]}')
-   
+
         mode = ""
         if args.decode:
             mode = "Decode"
@@ -46,13 +48,13 @@ class Main:
         import argparse
 
         parser = argparse.ArgumentParser()
-    
+
         parser.add_argument('cipher', type=str, help='The cipher name', nargs='?')
-    
+
         # Modes.
         parser.add_argument('-e', '--encode', dest='encode', action='store_true', help="Encode mode")
         parser.add_argument('-d', '--decode', dest='decode', action='store_true', help="Decode mode")
-    
+
         # Input.
         parser.add_argument('-t', '--text', dest='text', type=str, help="The input text")
         parser.add_argument('-k', '--key', dest='key', type=str, help="The key")
@@ -65,6 +67,7 @@ class Main:
         parser.add_argument('-src', dest='src_lang', type=str, help='source language')
         parser.add_argument('-dest', dest='dest_lang', type=str, help='destination language')
         parser.add_argument('-len', dest='length', type=int, help='length')
+        parser.add_argument('-cryoad-loki', dest='calls on loki', type=int, help='launch python based ransomware vault')
 
         args = parser.parse_args()
 
@@ -82,7 +85,7 @@ class Main:
             
         except:
             sys.exit(f'Cipher "{args.cipher}" may not exist')
-    
+
         func = None
 
         if args.input:
@@ -99,6 +102,9 @@ class Main:
         else:
             module.print_options()
             sys.exit("Please select a mode\nTry --help or -h for more information")
+
+        if args.ransome:
+            
 
         Main.output(func(args), args)
 
@@ -165,4 +171,3 @@ if __name__ == '__main__':
         sys.exit("Something went wrong...")
 
     Main.run(args, cipher_list)
-    
