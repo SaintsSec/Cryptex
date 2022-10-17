@@ -138,6 +138,9 @@ $ python main.py
 |      Binary Translator              |      bin           |
 |-- hash functions--------------------|-- short name ------|
 |      MD5                            |      md5           |
+|      sha224                         |      sha256        |
+|      sha256                         |      sha384        |
+|      sha384                         |      sha384        |
 |-------------------------------------|--------------------|
 
 Try --help or -h for more information
