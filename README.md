@@ -180,4 +180,15 @@ $ python main.py cc -e -t "Drink all the booze, Hack all the things..." -k 4
         Output     | Hvmro epp xli fssdi, Lego epp xli xlmrkw...
 
 ```
+## Our Amazing Contributors🌟
 
+<br>
+<a href="https://github.com/SSGorg/Cryptex/graphs/contributors">
+<p align="center">
+  <img src="https://contrib.rocks/image?repo=SSGorg/Cryptex" />
+  </p>
+</a>
+
+<div align="center">
+  <h2 align="center">Kudos! Your contribution is greatly appreciated.<h2>
+</div>
