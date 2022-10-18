@@ -12,29 +12,33 @@
 </p>
 
 ## 📖 History
-Cryptex started out in November 2021 with one developer Alex "cythes" Kollar as an attempt to be less of a script kiddy.
-It has since became so much more. As of april 2022 Alex decided to open the project up to the SSG community to some absolutely incredible results. At this point the SSG | Cryptex Dev Team was founded with a the idea of building cryptex into a cryptography tool that people could use, install and add to with ease. Similar to metasploit. The project and team has evolved so much in just the little time it has existed.  
+Cryptex started out in November 2021 with one developer **Alex "cythes" Kollar** as an attempt to be less of a script kiddy.
+It has since became so much more. As of april 2022 Alex decided to open the project up to the SSG community to some absolutely incredible results. At this point the **SSG | Cryptex Dev Team** was founded with a the idea of building cryptex into a cryptography tool that people could use, install and add to with ease. Similar to *metasploit*. The project and team has evolved so much in just the little time it has existed.  
   
-Cryptex itself maturing from Alex's seventeen original Hodge-podge of unoptimized tools, to what is now a professional grade cryptography toolkit. Cryptex is backed by a passionate team of devs ranging from beginners looking for a place to start to advanced devs who want a challenge. We even have a few idea men who come up with whacky encryption ideas for us to try to impliment. (Static Encryption. Go check it out.) Last but 110% not least our sponors who believe in the project enough to financially back us. 
+Cryptex itself maturing from Alex's seventeen original Hodge-podge of unoptimized tools, to what is now a professional grade cryptography toolkit. **Cryptex** is backed by a passionate team of devs ranging from beginners looking for a place to start to advanced devs who want a challenge. We even have a few idea men who come up with whacky encryption ideas for us to try to impliment. (Static Encryption. Go check it out.) Last but 110% not least our sponors who believe in the project enough to financially back us. 
   
 ## 🗓️ Upcoming Release
 ### Cryptex Beta V0.1.0 - Pumpkin Patch 00  
-After participation in Hacktoberfest 2022 we are going to put the collective updates from the event into a new realease. We are Dubbing the Pumpkin Patch. The plan is every year we do Hacktoberfest we will add a new Pumpkin Patch to Cryptex.  
+> After participation in Hacktoberfest 2022 we are going to put the collective updates from the event into a new realease. We are Dubbing the Pumpkin Patch. The plan is every year we do Hacktoberfest we will add a new Pumpkin Patch to Cryptex.  
   
-Other notes: 
-- We are moving away from the Earth Invader. 
-- complete rebuild of cryptex to work with Object Oriented Programming. 
+Notes: 
+- We are moving away from the *Earth Invader*. 
+- complete rebuild of cryptex to work with *Object Oriented Programming*. 
 - Its now easier to implement new Ciphers and tools.   
-- Installer has been rewritten from the ground up in python.
+- Installer has been rewritten from the ground up in *python*.
 - The main menu can now dynamically add ciphers and tools to the list.
-- We brought back the OG 'Cryptex UI' (We made it look pretty again)
+- We brought back the OG *'Cryptex UI'* (We made it look pretty again)
 - Implimented a system that lets us use Ascii art for version names.
 
 All of this is pushing Cryptex ever closer to its goal of becoming the `metaploit of cryptography`  
       
 ## 🛠️Basic Help:
+Command:
 ```
-$ python main.py --help
+python main.py --help
+```
+Output:
+```
 usage: main.py [-h] [-e] [-d] [-t TEXT]
                [-k KEY] [-ex EXCLUDE]
                [-o OUTPUT] [-i INPUT]
@@ -70,8 +74,12 @@ optional arguments:
   -len LENGTH         length
 ```
 ### If you want help with an individual cipher you can simply call the cipher like so:
+Command:
 ```
-$ python main.py cc
+python main.py cc
+```
+Output:
+```
  
         ### Modes
         -d / --decode ---- decode
@@ -96,14 +104,18 @@ Try --help or -h for more information
   <a href="https://discord.gg/899KQFeAXr"><img src="https://discordapp.com/api/guilds/879757204620726362/widget.png?style=banner3" alt="Discord Server"></a>
   
 ## 🔧 Issues
-If you face any problems while using the application, please open an issue here
+If you face any problems while using the application, please open an issue [here](https://github.com/SSGorg/Cryptex/issues).
  
 ## 🤝 Contributing
 Contributions, feedback, and bug reports are welcome! Feel free to check out our [issues page](https://github.com/SSGorg/Cryptex/issues) to find out what you could do! but before contrubuting make sure to check out [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Using Cryptex 
+Command:
 ```
-$ python main.py
+python main.py
+```
+Output:
+```
 
                _____              __         
               / ___/_____ _____  / /______ __
@@ -141,8 +153,13 @@ $ python main.py
 |-------------------------------------|--------------------|
 
 Try --help or -h for more information
-      
-$ python main.py cc
+```
+Command:
+```
+python main.py cc
+```
+Output:
+```
  
         ### Modes
         -d / --decode ---- decode
@@ -161,9 +178,13 @@ $ python main.py cc
        
 
 Try --help or -h for more information
-      
-$ python main.py cc -e -t "Drink all the booze, Hack all the things..." -k 4
-
+```
+Command:
+```
+python main.py cc -e -t "Drink all the booze, Hack all the things..." -k 4
+```
+Output:
+```
                _____              __         
               / ___/_____ _____  / /______ __
              / /__/ __/ // / _ \/ __/ -_) \ /
@@ -178,4 +199,3 @@ $ python main.py cc -e -t "Drink all the booze, Hack all the things..." -k 4
         Output     | Hvmro epp xli fssdi, Lego epp xli xlmrkw...
 
 ```
-
