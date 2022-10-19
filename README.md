@@ -13,6 +13,15 @@
     <a href="https://github.com/SSGorg/Cryptex/pulls"><img src="https://img.shields.io/github/issues-pr/SSGorg/Cryptex?color=0d1117&style=flat-square" alt="GitHub Pull Requests"></a>
 </p>
 
+ ## Table of Contents
+  - [History](#-history)
+  - [Upcoming Release](#%EF%B8%8F-upcoming-release)
+  - [Basic Help](#%EF%B8%8Fbasic-help)
+  - [Get in touch](#%EF%B8%8F-get-in-touch)
+  - [Issues](#-issues)
+  - [Contributing](#-contributing)
+  - [Our Amazing Contributors](#our-amazing-contributors)
+  
 ## 📖 History
 Cryptex started out in November 2021 with one developer Alex "cythes" Kollar as an attempt to be less of a script kiddy.
 It has since became so much more. As of april 2022 Alex decided to open the project up to the SSG community to some absolutely incredible results. At this point the SSG | Cryptex Dev Team was founded with a the idea of building cryptex into a cryptography tool that people could use, install and add to with ease. Similar to metasploit. The project and team has evolved so much in just the little time it has existed.  
