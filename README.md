@@ -45,6 +45,7 @@ If you face any problems while using the application, please open an issue here
  
 ## 🤝 Contributing
 Contributions, feedback, and bug reports are welcome! Feel free to check out our [issues page](https://github.com/SSGorg/Cryptex/issues) to find out what you could do! but before contrubuting make sure to check out [CONTRIBUTING.md](./CONTRIBUTING.md).
+#### **NOTE:** All active development happens in the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta)
 
 ## Our Amazing Contributors🌟
 
