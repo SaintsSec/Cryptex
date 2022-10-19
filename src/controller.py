@@ -53,6 +53,8 @@ class CLIManager:
             mode = "Decode"
         elif args.encode:
             mode = "Encode"
+        elif args.brute:
+            mode="Brute"
 
         banner()
 
@@ -97,6 +99,7 @@ class ArgumentParser:
         # Modes
         parser.add_argument("-e", "--encode", dest="encode", action="store_true", help="Encode mode")
         parser.add_argument("-d", "--decode", dest="decode", action="store_true", help="Decode mode")
+        parser.add_argument("-b", "--brute", dest="brute", action="store_true", help="Brute mode")
 
         # Input
         parser.add_argument("-t", "--text", dest="text", type=str, help="The input text")
@@ -110,6 +113,7 @@ class ArgumentParser:
         parser.add_argument("-src", dest="src_lang", type=str, help="source language")
         parser.add_argument("-dest", dest="dest_lang", type=str, help="destination language")
         parser.add_argument("-len", dest="length", type=int, help="length")
+        parser.add_argument("-r", "--range", dest="range", type=str, help="Range")
 
         args = parser.parse_args()
 
@@ -163,6 +167,8 @@ class Controller:
                 func = module.encode
             elif args.decode:
                 func = module.decode
+            elif args.brute:
+                func =module.brute
             else:
                 print("No mode selected. see the help menu for more info")
                 module.print_options()
