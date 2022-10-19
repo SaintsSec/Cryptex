@@ -130,7 +130,8 @@ This will send a request to the maintainer to add your contribution to the main 
 <br/>
 Add a title to your Pull Request.
 <br/>Make sure to mention which issue is solved with this Pull Request by mentioning the issue number #. Then add a description to your Pull Request that explains your contribution.
-<br/> **Note:** Make sure you are synched up to the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta), and make your pull request merge into the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta).
+<br/> 
+#### **Note:** Make sure you are synched up to the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta), and make your pull request merge into the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta).
 
 ### Review
 
