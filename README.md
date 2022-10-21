@@ -4,6 +4,8 @@
   <h3>Locks only exist to keep honest people honest</h3>
 </div>
 
+# V:1.0.0 Pumpkin Patch - beta
+
 <p align="center">
     <a href="https://github.com/SSGorg/Cryptex/blob/main/LICENCE"><img src="https://img.shields.io/badge/license-AGPL%20%203.0-0d1117?style=flat-square" alt="GitHub License"></a>
     <a href="https://github.com/SSGorg/Cryptex/issues"><img src="https://img.shields.io/github/issues/SSGorg/Cryptex?color=0d1117&style=flat-square" alt="GitHub Issues"> 
@@ -28,6 +30,7 @@ Cryptex itself has matured from Alex's hodgepodge of seventeen original but unop
   
 ## 🗓️ Upcoming Release
 ### Cryptex V1.0.0 - Pumpkin Patch 00  
+
 After participation in Hacktoberfest 2022, we are going to put the collective updates from the event into a new release, which we will be dubbing as the Pumpkin Patch. The plan is that for every year we participate in Hacktoberfest, we will add a new Pumpkin Patch to Cryptex.  
   
 Other notes: 
@@ -51,7 +54,9 @@ All of this is pushing Cryptex ever closer to its goal of becoming the `Metaploi
 If you face any problems while using the application, please open an issue here
  
 ## 🤝 Contributing
+
 Contributions, feedback, and bug reports are welcome! Feel free to check out our [issues page](https://github.com/SSGorg/Cryptex/issues) to find out what you could do! But before contributing, make sure to check out [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 #### **NOTE:** All active development happens in the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta)
 
 ## Our Amazing Contributors🌟

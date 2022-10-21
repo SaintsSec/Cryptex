@@ -22,3 +22,8 @@ from .menc import *
 from .ma import *
 from .bac import *
 from .ak import *
+from .pb import *
+from .sha224 import *
+from .sha256 import *
+from .sha384 import *
+from .gc import *
