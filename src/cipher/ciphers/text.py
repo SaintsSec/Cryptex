@@ -54,4 +54,3 @@ class Text(Cipher):
 
         return {'status': True, 'msg': f'Ran {total} tests'}
         
-        
