@@ -42,23 +42,15 @@ class Text(Cipher):
         total = 2
         args.text = 'hello'
         out = Text.encode(args)
-        if not out['success']:
-            return {'status': False, 'msg': f'''
-        Encoding failed: "{out['text']}"'''}
-        
-        if args.text not in out['text']:
-            return {'status': False, 'msg': f'''
-        Failed to encode {args.text} to {args.text} got {out['text']}'''}
+        if not out['success'] or args.text not in out['text']:
+            return {'status': False, 'msg': f'''Failed to encode {args.text}
+            expected {args.text} got {out['text']}'''}
 
         args.text = 'hello'
         out = Text.decode(args)
-        if not out['success']:
-            return {'status': False, 'msg': f'''
-        Decoding failed: "{out['text']}"'''}
-        
-        if args.text not in out['text']:
-            return {'status': False, 'msg': f'''
-        Failed to decode {args.text} to {args.text} got {out['text']}'''}
+        if not out['success'] or args.text != out['text']:
+            return {'status': False, 'msg': f'''Failed to decode {args.text}
+            expected {args.text} got {out['text']}'''}
 
         return {'status': True, 'msg': f'Ran {total} tests'}
         

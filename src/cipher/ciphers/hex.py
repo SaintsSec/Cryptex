@@ -53,15 +53,15 @@ class Hex(Cipher): #make sure you change this from text to your cipher
         expect = '68656c6c6f'
         out = Hex.encode(args)
         if not out['success'] or out['text'] != expect:
-            return {'status': False, 'msg': f'''
-            Failed to encode "{args.text}" to "{expect}" got "{out['text']}"'''}
+            return {'status': False, 'msg': f'''Failed to encode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
 
         args.text = expect
         expect = 'hello'
         out = Hex.decode(args)
         if not out['success'] or out['text'] != expect:
-            return {'status': False, 'msg': f'''
-            Failed to decode "{args.text}" to "{expect}" got "{out['text']}"'''}
+            return {'status': False, 'msg': f'''Failed to decode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
 
         return {'status': True, 'msg': f'Ran {total} tests'}
         

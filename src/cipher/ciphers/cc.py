@@ -108,8 +108,8 @@ class CC(Cipher):
             Encoding failed: "{out['text']}"'''}
             
             if out['text'] not in expect[i]:
-                return {'status': False, 'msg': f'''
-            Failed to encode "hello" to "{expect[i]}" with key {i} got {out['text']}'''}
+                return {'status': False, 'msg': f'''Failed to encode "hello"
+                expected "{expect[i]}" with key {i} got {out['text']}'''}
 
         for i in range(1, 26):
             total += 1
@@ -121,7 +121,7 @@ class CC(Cipher):
             Decoding failed: "{out['text']}"'''}
             
             if out['text'] not in 'hello':
-                return {'status': False, 'msg': f'''
-            Failed to decode "{args.text}" to "hello" with key {i} got {out['text']}'''}
+                return {'status': False, 'msg': f'''Failed to decode "{args.text}"
+                expected "hello" with key {i} got {out['text']}'''}
 
         return {'status': True, 'msg': f'Ran {total} tests'}
