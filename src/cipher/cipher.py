@@ -15,4 +15,5 @@ class Cipher(object):
         ''')
 
     def test(args):
+        raise Exception('Not implemented')
         return {'status': False, 'msg': 'Not Implemented'}

@@ -149,8 +149,8 @@ class Controller:
                 for k, v in self.cipher_list.items():
                     try:
                         out = v.test(args)
-                    except:
-                        print(f"{Fore.YELLOW}No test for {k}{Fore.WHITE}")
+                    except Exception as e:
+                        print(f"{Fore.YELLOW}No test for {k}{Fore.WHITE}\n\t{e}")
                     else:
                         color = Fore.GREEN
                         msg = "Success:"
