@@ -80,8 +80,8 @@ class CLIManager:
         """
         )
 
-        # remove output file from args for qr
-        if args.cipher == "qr":
+        # remove output file from args for ciphers that manually write a file
+        if args.cipher in ['qr', 'se']:
             args.output = None
 
         # if output then output
