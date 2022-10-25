@@ -123,3 +123,22 @@ class Mor(Cipher): #make sure you change this from text to your cipher
         python main.py mor -e -t 'hello'
         python main.py mor -d -t '.... . .-.. .-.. ---'
         ''') 
+
+    def test(args):
+        total = 2
+
+        args.text = 'HELLO'
+        expect = '.... . .-.. .-.. ---'
+        out = Mor.encode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to encode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        args.text, expect = expect, args.text
+        out = Mor.decode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to decode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        return {'status': True, 'msg': f'Ran {total} tests'}
+            
