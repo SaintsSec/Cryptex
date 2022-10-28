@@ -110,6 +110,8 @@ class ArgumentParser:
         parser.add_argument("-src", dest="src_lang", type=str, help="source language")
         parser.add_argument("-dest", dest="dest_lang", type=str, help="destination language")
         parser.add_argument("-len", dest="length", type=int, help="length")
+        parser.add_argument("-ka", "--key_a", dest="key_a", type=int, help="Key -a")
+        parser.add_argument("-kb", "--key_b", dest="key_b", type=int, help="Key -b")
 
         args = parser.parse_args()
 
