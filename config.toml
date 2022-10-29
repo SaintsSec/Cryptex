@@ -84,6 +84,10 @@ paginate = 5
 
     [languages.en.menu]
       [[languages.en.menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/Cryptex"
+      [[languages.en.menu.main]]
         identifier = "cryptex"
         name = "Cryptex"
         url = "https://github.com/SSGorg/Cryptex"
