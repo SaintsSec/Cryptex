@@ -79,8 +79,8 @@ paginate = 5
     missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
-      logoText = "Terminal"
-      logoHomeLink = "/"
+      logoText = "Cryptex"
+      logoHomeLink = "/Cryptex"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
