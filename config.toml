@@ -1,4 +1,4 @@
-baseurl = "https://SSGorg.github.io/Cryptex"
+baseurl = "https://SSGorg.github.io/Cryptex/"
 languageCode = "en-us"
 # Add it only if you keep the theme in the `themes` directory.
 # Remove it if you use the theme as a remote Hugo Module.
