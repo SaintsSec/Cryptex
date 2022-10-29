@@ -86,7 +86,7 @@ paginate = 5
       [[languages.en.menu.main]]
         identifier = "home"
         name = "Home"
-        url = "/Cryptex"
+        url = "/"
       [[languages.en.menu.main]]
         identifier = "cryptex"
         name = "Cryptex"
