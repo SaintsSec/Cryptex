@@ -1,7 +1,7 @@
 # Contributing to Cryptex 🤝
 Firstly, thank you for taking the time to contribute.
 <br/>
-We welcome contributions from anyone willing to improve this project or add new features and you may see historic contributors on the repositories page on the right-hand panel.
+We welcome contributions from anyone willing to improve this project or add new features. You may see historic contributors on the repositories page on the right-hand panel.
 <br/>
 Contribution guidelines are listed below. Please take the time to go through the guidelines and follow them so that it is easy for maintainers to merge or address your contributions. 
 </br>
@@ -31,7 +31,7 @@ This project and everyone participating in it is governed by the [Cryptex Code o
 
 ## First time Contributor
 
-As a first time contributor if you are not sure about contributing, feel free to ask our dev team on our [Discord Server](https://discord.gg/899KQFeAXr)
+As a first-time contributor, if you are not sure about contributing, feel free to ask our dev team on our [Discord Server](https://discord.gg/899KQFeAXr)
 <br/>
 A good place to start would be our list of [good first issues](https://github.com/SSGorg/Cryptex/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
@@ -42,17 +42,17 @@ A good place to start would be our list of [good first issues](https://github.co
 - Every change in this project must have an associated issue. **Issue before PR**
 
 ### Legal Notice
-> When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
+> When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content, and that the content you contribute may be provided under the project license.
 
 To start contributing to this project, follow the steps below.
 
 ### Fork the Project
 
-- Fork this repository. This will create a local copy of this repository on your github profile.
+- Fork this repository. This will create a local copy of this repository on your GitHub profile.
 
   <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/J4pdgJZH/Screenshot-2022-10-10-at-18-51-49.png' border='0' alt='Fork Repository'/></a>
 
-- Now clone the forked repository on your local machine
+- Now clone the forked repository on your local machine.
 
   ```bash
   git clone https://github.com/<your-username>/Cryptex.git
@@ -97,7 +97,7 @@ git checkout -b branch_name
 
 - Work on the issue assigned to you.
 - Add all the files/folders needed.
-- After you've made your contribution to the project add changes to the branch you've just created:
+- After you've made your contribution to the project, add changes to the branch you've just created:
 
 ```bash
 # To add all new files to branch branch_name  
@@ -125,16 +125,17 @@ git push -u origin branch_name
 
 ### Pull Request
 
-Go to your repository in the browser and click on compare and pull requests.
+Go to your repository on your web browser and click on 'Compare and pull request'.
 This will send a request to the maintainer to add your contribution to the main repository `https://github.com/SSGorg/Cryptex`
 <br/>
 Add a title to your Pull Request.
 <br/>Make sure to mention which issue is solved with this Pull Request by mentioning the issue number #. Then add a description to your Pull Request that explains your contribution.
-<br/> **Note:** Make sure you are synched up to the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta), and make your pull request merge into the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta).
+<br/> 
+#### **Note:** Make sure you are synced up to the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta), and make your pull request merge into the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta).
 
 ### Review
 
-🎉🌟Congratulations! Sit and relax, you've made your contribution to Cryptex project. Wait until the PR is reviewed and incorporate changes suggested by the reviewers. After which the PR can be successfully merged.
+🎉🌟Congratulations! Now sit and relax, you've made your contribution to the Cryptex project. Wait until the PR is reviewed and changes are incorporated as suggested by the reviewers, after which the PR can be successfully merged.
 
 ## Other Ways to Contribute
 
