@@ -48,3 +48,21 @@ class B64(Cipher): #make sure you change this from text to your cipher
         python main.py text -e -t 'hello'
         python main.py text -d -t 'hello'
         ''')
+
+    def test(args):
+        total = 2
+
+        args.text = 'hello'
+        expect = 'aGVsbG8='
+        out = B64.encode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to encode {args.text}
+            expected "{args.text}" got "{out['text']}"'''}
+
+        args.text, expect = expect, args.text
+        out = B64.decode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to decode {args.text}
+            expected "{args.text}" got "{out['text']}"'''}
+        
+        return {'status': True, 'msg': f'Ran {total} tests'} 

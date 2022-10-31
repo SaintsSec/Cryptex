@@ -14,26 +14,16 @@ class L33T(Cipher): #make sure you change this from text to your cipher
         'c': '(',
         'e': '3',
         'g': '6',
-        'h': '#',
-        'i': '¡',
+        'h': 'H',
+        'i': '1',
         'k': 'X',
-        'l': '1',
+        'l': 'l',
         'o': '0',
         'p': '9',
         's': '5',
         't': '7',
         'x': '*',
         'z': '2',
-        '0': 'O',
-        '1': 'L',
-        '2': 'Z',
-        '3': 'E',
-        '4': 'A',
-        '5': 'S',
-        '6': 'G',
-        '7': 'T',
-        '8': 'B',
-        '9': 'P',
     }
     inverse_leet_speak = dict((v, k) for k,v in leet_speak.items())
 
@@ -76,3 +66,21 @@ class L33T(Cipher): #make sure you change this from text to your cipher
         python main.py l33t -e -t 'hello'
         python main.py l33t -d -t 'h3llo'
         ''')
+
+    def test(args):
+        total = 2
+
+        args.text = 'hello'
+        expect = 'H3ll0'
+        out = L33T.encode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to encode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        args.text, expect = expect, args.text
+        out = L33T.decode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to decode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        return {'status': True, 'msg': f'Ran {total} tests'}

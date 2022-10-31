@@ -43,3 +43,21 @@ class R13(Cipher):
         python main.py r13 -e -t 'hello'
         python main.py r13 -d -t 'hello'
         ''')
+
+    def test(args):
+        total = 2
+
+        args.text = 'hello'
+        expect = 'uryyb'
+        out = R13.encode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to encode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        args.text, expect = expect, args.text
+        out = R13.decode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to decode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        return {'status': True, 'msg': f'Ran {total} tests'}
