@@ -42,3 +42,21 @@ class RC(Cipher):
         python main.py rc -e -t 'hello'
         python main.py rc -d -t 'hello'
         ''')
+
+    def test(args):
+        total = 2
+
+        args.text = 'hello'
+        expect = 'olleh'
+        out = RC.encode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to encode {args.text}
+            expected {args.text} got {out['text']}'''}
+
+        args.text, expect = expect, args.text
+        out = RC.decode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to decode {args.text}
+            expected {args.text} got {out['text']}'''}
+
+        return {'status': True, 'msg': f'Ran {total} tests'}
