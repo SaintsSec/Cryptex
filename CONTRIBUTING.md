@@ -57,10 +57,6 @@ To start contributing to this project, follow the steps below.
   ```bash
   git clone https://github.com/<your-username>/Cryptex.git
   ```
-  For the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta):
-  ```bash
-  git clone https://github.com/<your-username>/Cryptex.git -b beta
-  ```
   
 - Keep a reference to the original project in `upstream` remote.
 
@@ -75,12 +71,6 @@ To start contributing to this project, follow the steps below.
   git remote update
   git checkout -b main
   git rebase upstream/main
-  ```
-  For the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta):
-  ```bash
-  git remote update
-  git checkout -b beta
-  git rebase upstream/beta
   ```
 
 ### Create a new branch
@@ -131,7 +121,6 @@ This will send a request to the maintainer to add your contribution to the main 
 Add a title to your Pull Request.
 <br/>Make sure to mention which issue is solved with this Pull Request by mentioning the issue number #. Then add a description to your Pull Request that explains your contribution.
 <br/> 
-#### **Note:** Make sure you are synced up to the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta), and make your pull request merge into the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta).
 
 ### Review
 

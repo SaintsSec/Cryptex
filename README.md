@@ -4,7 +4,7 @@
   <h3>Locks only exist to keep honest people honest</h3>
 </div>
 
-# V:1.0.0 Pumpkin Patch - beta
+# V:1.0.0 Pumpkin Patch
 
 <p align="center">
     <a href="https://github.com/SSGorg/Cryptex/blob/main/LICENCE"><img src="https://img.shields.io/badge/license-AGPL%20%203.0-0d1117?style=flat-square" alt="GitHub License"></a>
@@ -56,8 +56,6 @@ If you face any problems while using the application, please open an issue here
 ## 🤝 Contributing
 
 Contributions, feedback, and bug reports are welcome! Feel free to check out our [issues page](https://github.com/SSGorg/Cryptex/issues) to find out what you could do! But before contributing, make sure to check out [CONTRIBUTING.md](./CONTRIBUTING.md).
-
-#### **NOTE:** All active development happens in the [beta branch](https://github.com/SSGorg/Cryptex/tree/beta)
 
 ## Our Amazing Contributors🌟
 
