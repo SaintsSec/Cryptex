@@ -11,8 +11,8 @@ class Translate(Cipher): #make sure you change this from text to your cipher
 
     @staticmethod
     def translate(text, src_lang, dest_lang):
-        tranlator = Translator()
-        translated = tranlator.translate(text, src=src_lang, dest=dest_lang)
+        translator = Translator()
+        translated = translator.translate(text, src=src_lang, dest=dest_lang)
         return translated.text
 
     @staticmethod
@@ -62,3 +62,26 @@ class Translate(Cipher): #make sure you change this from text to your cipher
         python main.py translate -e -t 'hello' -src 'en' -dest 'no'
         python main.py translate -d -t 'hallo' -src 'no' -dest 'en'
         ''')
+
+    def test(args):
+        total = 2
+
+        args.text = 'hello'
+        args.src_lang = 'en'
+        args.dest_lang = 'no'
+        expect = 'Hallo'
+        out = Translate.encode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to encode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        args.text = 'hallo'
+        args.src_lang = 'no'
+        args.dest_lang = 'en'
+        expect = 'hello'
+        out = Translate.decode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to decode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        return {'status': True, 'msg': f'Ran {total} tests'}

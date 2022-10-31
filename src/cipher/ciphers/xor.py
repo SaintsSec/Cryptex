@@ -67,3 +67,22 @@ class XOR(Cipher): #make sure you change this from text to your cipher
         python main.py text -e -t 'hello' -k 'KEY'
         python main.py text -d -t '# 5'*' -k 'KEY'
         ''')
+
+    def test(args):
+        total = 2
+
+        args.text = 'HELLO'
+        args.key = 'asd'
+        expect = ')6(-<'
+        out = XOR.encode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to encode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        args.text, expect = expect, args.text
+        out = XOR.decode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to decode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+        
+        return {'status': True, 'msg': f'Ran {total} tests'}

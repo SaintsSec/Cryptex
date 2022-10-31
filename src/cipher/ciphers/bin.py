@@ -46,3 +46,23 @@ class bin(Cipher): #make sure you change this from text to your cipher
         python main.py text -e -t 'hello'
         python main.py text -d -t 'hello'
         ''')
+
+    def test(args):
+        total = 2
+
+        args.text = 'hello'
+        expect = '1101000 1100101 1101100 1101100 1101111'
+        # NOTE (marvhus): Should the binary output have a byte length of 7 or 8?
+        out = bin.encode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to encode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        args.text, expect = expect, args.text
+        out = bin.decode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to decode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        return {'status': True, 'msg': f'Ran {total} tests'}
+            
