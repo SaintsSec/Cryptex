@@ -3,6 +3,7 @@ import itertools
 import sys
 from typing import List
 
+from colorama import Fore
 from vars import banner
 
 
@@ -53,6 +54,8 @@ class CLIManager:
             mode = "Decode"
         elif args.encode:
             mode = "Encode"
+        elif args.brute:
+            mode="Brute"
 
         banner()
 
@@ -78,8 +81,8 @@ class CLIManager:
         """
         )
 
-        # remove output file from args for qr
-        if args.cipher == "qr":
+        # remove output file from args for ciphers that manually write a file
+        if args.cipher in ['qr', 'se']:
             args.output = None
 
         # if output then output
@@ -97,6 +100,8 @@ class ArgumentParser:
         # Modes
         parser.add_argument("-e", "--encode", dest="encode", action="store_true", help="Encode mode")
         parser.add_argument("-d", "--decode", dest="decode", action="store_true", help="Decode mode")
+        parser.add_argument("--test", dest="test", action="store_true", help="Run all tests")
+        parser.add_argument("-b", "--brute", dest="brute", action="store_true", help="Brute mode")
 
         # Input
         parser.add_argument("-t", "--text", dest="text", type=str, help="The input text")
@@ -112,6 +117,7 @@ class ArgumentParser:
         parser.add_argument("-len", dest="length", type=int, help="length")
         parser.add_argument("-ka", "--key_a", dest="key_a", type=int, help="Key -a")
         parser.add_argument("-kb", "--key_b", dest="key_b", type=int, help="Key -b")
+        parser.add_argument("-r", "--range", dest="range", type=str, help="Range")
 
         args = parser.parse_args()
 
@@ -143,6 +149,33 @@ class Controller:
         for layer in layers:
             args = self.parser.parse_string(layer)
 
+            if args.test:
+                print('\n')
+                status = [0, 0]
+                for k, v in self.cipher_list.items():
+                    try:
+                        out = v.test(args)
+                    except Exception as e:
+                        print(f"{Fore.YELLOW}No test for {k}{Fore.WHITE}\n\t{e}")
+                    else:
+                        color = Fore.GREEN
+                        msg = "Success:"
+
+                        if out['status']:
+                            status[0] += 1
+                        else:
+                            status[1] += 1
+                            color = Fore.RED
+                            msg = "Failed: "
+                        print(f"{color}{msg} {k} {'-' * (15 - len(k))} {out['msg']}{Fore.WHITE}")
+
+                total = status[0] + status[1] 
+                print(f"{Fore.GREEN}Success{Fore.WHITE}/{Fore.RED}Failed {Fore.WHITE}{status[0]}/{status[1]}")
+                percent = (status[0] / total) * 100
+                print(f"Success percentage {percent}%")
+                        
+                return
+            
             if not args.cipher:
                 sys.exit("No cipher selected.")
 
@@ -165,6 +198,8 @@ class Controller:
                 func = module.encode
             elif args.decode:
                 func = module.decode
+            elif args.brute:
+                func =module.brute
             else:
                 print("No mode selected. see the help menu for more info")
                 module.print_options()

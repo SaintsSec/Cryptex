@@ -60,3 +60,22 @@ class R47(Cipher):
         python main.py r47 -e -t 'hello'
         python main.py r47 -d -t 'hello'
         ''')
+
+    def test(args):
+        total = 2
+
+        args.text = 'hello'
+        expect = '96==@'
+        out = R47.encode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to encode {args.text}
+            expected {args.text} got {out['text']}'''}
+
+        args.text, expect = expect, args.text
+        out = R47.decode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to decode {args.text}
+            expected {args.text} got {out['text']}'''}
+
+        return {'status': True, 'msg': f'Ran {total} tests'}
+        

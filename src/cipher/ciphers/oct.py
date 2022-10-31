@@ -45,3 +45,21 @@ class Oct(Cipher): #make sure you change this from text to your cipher
         python main.py oct -e -t 'hello'
         python main.py oct -d -t '150 145 154 154 157'
         ''')
+
+    def test(args):
+        total = 2
+
+        args.text = 'hello'
+        expect = '150 145 154 154 157'
+        out = Oct.encode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to encode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        args.text, expect = expect, args.text
+        out = Oct.decode(args)
+        if not out['success'] or out['text'] != expect:
+            return {'status': False, 'msg': f'''Failed to decode "{args.text}"
+            expected "{expect}" got "{out['text']}"'''}
+
+        return {'status': True, 'msg': f'Ran {total} tests'}

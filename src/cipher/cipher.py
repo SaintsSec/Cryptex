@@ -13,3 +13,7 @@ class Cipher(object):
         print('''
         Not implemented.
         ''')
+
+    def test(args):
+        raise Exception('Not implemented')
+        return {'status': False, 'msg': 'Not Implemented'}
