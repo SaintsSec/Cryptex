@@ -29,20 +29,16 @@ It has since then became so much more. As of April, 2022, Alex decided to open t
 Cryptex itself has matured from Alex's hodgepodge of seventeen original but unoptimized tools, to what is now a professional-grade cryptography toolkit. Cryptex is backed by a passionate team of devs, ranging from beginners looking for a place to start, to advanced devs who want a challenge. We even have a few idea men who come up with wacky encryption ideas for us to try to implement. (Static Encryption; go check it out!) Lastly, but definitely not the least, this has been possible thanks to our sponsors who believe in the project enough to financially back us up. 
   
 ## 🗓️ Upcoming Release
-### Cryptex V1.0.0 - Pumpkin Patch 00  
-
-After participation in Hacktoberfest 2022, we are going to put the collective updates from the event into a new release, which we will be dubbing as the Pumpkin Patch. The plan is that for every year we participate in Hacktoberfest, we will add a new Pumpkin Patch to Cryptex.  
+### Cryptex V2.0.0 - DevNull 
+Cryptex DevNull will be highly focused on bringing together Cryptographic Malware in a **SAFE** way so people can experiment with and learn how these kinds of things work. We are calling this system **Cryptex | Cryodes**. With our first Cryode "Loki" was published as part of Cryptex v1.0.0 as a teaser. While Loki is not fully finished yet the core functions work out of the box. If you want to keep up with Loki and the rest of the Cryodes development process go check out the beta branch for all the latest and greatest goodies Cryptex has to offer.
   
 Other notes: 
-- We are moving away from the Earth Invader. 
-- Complete rebuild of Cryptex to work with Object-Oriented Programming. 
-- It is now easier to implement new ciphers and tools.   
-- Installer has been rewritten from the ground-up in Python.
-- The main menu can now dynamically add ciphers and tools to the list.
-- We brought back the OG 'Cryptex UI' (we made it look pretty again).
-- Implemented a system that lets us use ASCII art for version names.
+- Cryodes System Implimentation
+- Planned QOL improvements
+- Reworked Menu System
+- Crossplatform Support (Mac / Windows)
 
-All of this is pushing Cryptex ever closer to its goal of becoming the `Metaploit of cryptography`  
+> All of this is pushing Cryptex ever closer to its goal of becoming the `Metaploit of cryptography`  
       
 ## [🛠️Basic Help](https://github.com/SSGorg/Cryptex/wiki/Cryptex-Syntax)
 
