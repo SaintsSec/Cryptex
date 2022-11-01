@@ -1,10 +1,9 @@
 <div align="center">
   <img src="https://i.imgur.com/AeE9koP.png" alt="Logo">
   <h1> Cryptex | An SSG Community Project </h1>
-  <h3>Locks only exist to keep honest people honest</h3>
+  <h2>Locks only exist to keep honest people honest</h2>
+  <h1>v1.0.0 Pumpkin Patch - Released</h1>
 </div>
-
-# V:1.0.0 Pumpkin Patch
 
 <p align="center">
     <a href="https://github.com/SSGorg/Cryptex/blob/main/LICENCE"><img src="https://img.shields.io/badge/license-AGPL%20%203.0-0d1117?style=flat-square" alt="GitHub License"></a>
