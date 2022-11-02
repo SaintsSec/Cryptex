@@ -14,3 +14,5 @@ class MenuSystem:
             self.types[cipher.type].append(cipher)
 
         print(self.types)
+
+        
