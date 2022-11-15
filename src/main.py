@@ -20,6 +20,7 @@ def run():
 
     # If there are no args, exit.
     if not args_exist:
+        controller = Controller([])
         controller.cli.print_ciphers()
         sys.exit("Please enter an argument when using this command.\nTry --help or -h for more information")
         
