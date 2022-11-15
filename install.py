@@ -23,6 +23,12 @@ class Distros:
     @staticmethod
     def void():
         return Distros.debian()
+    @staticmethod
+    def opensuse():
+        return [
+            'sudo zypper in python310',
+        ]
+        # Do I need to add more here?
 
 def handle_distros():
     # Distros
@@ -38,6 +44,10 @@ def handle_distros():
             'Manjaro',
         ],
         'Void' : [],
+        'openSUSE': [
+            'openSUSE Tumbleweed',
+            'openSUSE Leap',
+        ]
     }
 
     # auto detect
@@ -82,6 +92,8 @@ def handle_distros():
         return Distros.arch()
     elif 'void' in ans:
         return Distros.void()
+    elif 'opensuse' in ans:
+        return Distros.opensuse()
     
     print(f'\n\t{Fore.RED}Unsuported distro: {Fore.WHITE}{ans}\n')
     exit(1)
