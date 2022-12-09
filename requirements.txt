@@ -6,3 +6,5 @@ pillow
 numpy
 image
 requests
+hashcat
+hashcat-utils
