@@ -17,8 +17,8 @@ class Distros:
     @staticmethod
     def arch():
         return [
-            'sudo packman -Syu',
-            'sudo packman -S python python-pip',
+            'sudo pacman -Syu',
+            'sudo pacman -S python python-pip',
         ]
     @staticmethod
     def void():
