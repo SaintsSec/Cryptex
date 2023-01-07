@@ -82,7 +82,7 @@ class CLIManager:
         )
 
         # remove output file from args for ciphers that manually write a file
-        if args.cipher in ['qr', 'se']:
+        if args.cipher in ['qr', 'se', 'midify']:
             args.output = None
 
         # if output then output
@@ -189,10 +189,14 @@ class Controller:
             func = None
 
             if args.input:
-                with open(args.input, "r") as f:
-                    data = f.readlines()
-                    data = "".join(data)
-                    args.text = data
+                try:
+                    with open(args.input, "r") as f:
+                        data = f.readlines()
+                        data = "".join(data)
+                        args.text = data
+                except UnicodeDecodeError:
+                    # can't read... probably because it's handled by cipher
+                    pass
 
             if args.encode:
                 func = module.encode
