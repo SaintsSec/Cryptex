@@ -29,3 +29,4 @@ from .sha224 import *
 from .sha256 import *
 from .sha384 import *
 from .gc import *
+from .midify import *

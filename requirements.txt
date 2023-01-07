@@ -8,3 +8,4 @@ image
 requests
 hashcat
 hashcat-utils
+mido
