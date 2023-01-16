@@ -30,3 +30,5 @@ from .sha256 import *
 from .sha384 import *
 from .gc import *
 from .midify import *
+from .str2int import *
+
