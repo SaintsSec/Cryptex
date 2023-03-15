@@ -31,14 +31,15 @@ class Update:
         return
 
     def updatePrompt(self):
-        ans=input(f'{Fore.YELLOW}>_ {Fore.CYAN}There is a new version of Cryptex availiable, do you want to update? (Y/n) :{Fore.WHITE} ')
-        if 'n' in ans.lower():
-            print(f'{Fore.YELLOW}Not updating{Fore.WHITE}')
-            return False
+        ans=input(f'{Fore.YELLOW}>_ {Fore.CYAN}There is a new version of Cryptex availiable, do you want to update? (y/N) :{Fore.WHITE} ')
 
-        os.system(f'git -C {self.folder_path} pull')
-        print(f'{Fore.GREEN}Updated!')
-        exit(0)
+        if ans.lower() in ['y', 'yes']:
+            os.system(f'git -C {self.folder_path} pull')
+            print(f"{Fore.GREEN}Updated!{Fore.WHITE}")
+            exit(0)
+
+        print(f"{Fore.YELLOW}Not updating{Fore.WHITE}")
+        return False
     
     def compareVersions(self):
         return self.formatedOnlineVersion > self.formatedLocalVersion
