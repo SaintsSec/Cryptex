@@ -1,12 +1,10 @@
 qrcode
 Cryptography
-googletrans
+googletrans==4.0.0-rc1
 colorama
 pillow
 numpy
 image
 requests
-httpcore
 hashcat
-hashcat-utils
 mido
