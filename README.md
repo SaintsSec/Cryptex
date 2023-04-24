@@ -12,9 +12,10 @@
     <a href="https://github.com/SSGorg/Cryptex/pulls"><img src="https://img.shields.io/github/issues-pr/SSGorg/Cryptex?color=0d1117&style=flat-square" alt="GitHub Pull Requests"></a>
 </p>
   
-## 🤝 Sponsors / Endorsements:   
-I would like to take a moment to thank our Sponsors / Endorsers for all they have done for us.   
-<img src="https://user-images.githubusercontent.com/89718570/234070674-51080b9a-be10-476f-9bbf-3e1e2a6cca9e.png" width="10%" height="10%">     
+## 🤝 Sponsors / Endorsements: Thank you so much!     
+<div align="center">
+<img src="https://user-images.githubusercontent.com/89718570/234070674-51080b9a-be10-476f-9bbf-3e1e2a6cca9e.png" width="25%" height="25%">  
+</div>  
     
  ## Table of Contents
   - [History](#-history)
