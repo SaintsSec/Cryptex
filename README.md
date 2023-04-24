@@ -11,7 +11,11 @@
     <a href="https://github.com/SSGorg/Cryptex/stargazers"><img src="https://img.shields.io/github/stars/SSGorg/Cryptex?style=flat-square&color=0d1117" alt="GitHub Stars"></a>
     <a href="https://github.com/SSGorg/Cryptex/pulls"><img src="https://img.shields.io/github/issues-pr/SSGorg/Cryptex?color=0d1117&style=flat-square" alt="GitHub Pull Requests"></a>
 </p>
-
+  
+## 🤝 Sponsors / Endorsements:   
+I would like to take a moment to thank our Sponsors / Endorsers for all they have done for us.   
+<img src="https://user-images.githubusercontent.com/89718570/234070674-51080b9a-be10-476f-9bbf-3e1e2a6cca9e.png" width="10%" height="10%">     
+    
  ## Table of Contents
   - [History](#-history)
   - [Upcoming Release](#%EF%B8%8F-upcoming-release)
