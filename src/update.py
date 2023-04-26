@@ -1,6 +1,5 @@
 import os
 import requests
-from colorama import Fore
 
 class Update:
     def __init__(self):
@@ -18,27 +17,27 @@ class Update:
         new_version_availiable = self.compareVersions()
 
         if not new_version_availiable:
-            print(f'{Fore.YELLOW}No new version availiable{Fore.WHITE}')
+            print(f'No new version availiable')
             return
 
         print(f'''
-            {Fore.GREEN}There is a new update availiable
-            {Fore.YELLOW}Current version: {self.localVersion}
-            {Fore.YELLOW}Newer version: {self.onlineVersion}
-        {Fore.WHITE}''')
+            There is a new update availiable
+            Current version: {self.localVersion}
+            Newer version: {self.onlineVersion}
+        ''')
         
         self.updatePrompt()
         return
 
     def updatePrompt(self):
-        ans=input(f'{Fore.YELLOW}>_ {Fore.CYAN}There is a new version of Cryptex availiable, do you want to update? (y/N) :{Fore.WHITE} ')
+        ans=input(f'>_ There is a new version of Cryptex availiable, do you want to update? (y/N) : ')
 
         if ans.lower() in ['y', 'yes']:
             os.system(f'git -C {self.folder_path} pull')
-            print(f"{Fore.GREEN}Updated!{Fore.WHITE}")
+            print(f"Updated!")
             exit(0)
 
-        print(f"{Fore.YELLOW}Not updating{Fore.WHITE}")
+        print(f"Not updating")
         return False
     
     def compareVersions(self):
@@ -68,5 +67,5 @@ class Update:
         try:
             return int(formated)
         except ValueError:
-            print(f'{Fore.RED}ERROR: Failed to get number from {versionString} formatted to {formated}')
+            print(f'ERROR: Failed to get number from {versionString} formatted to {formated}')
             exit(1)
