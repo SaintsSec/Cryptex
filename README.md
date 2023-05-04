@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://i.imgur.com/AeE9koP.png" alt="Logo">
   <h1> Cryptex | An SSG Community Project </h1>
-  <h2>Locks only exist to keep honest people honest</h2>
+  <h2>An advance commandline cryptographcy toolkit.</h2>
   <h1>v1.0.0 Pumpkin Patch - Released</h1>
 </div>
 
