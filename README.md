@@ -10,6 +10,7 @@
     <a href="https://github.com/SSGorg/Cryptex/issues"><img src="https://img.shields.io/github/issues/SSGorg/Cryptex?color=0d1117&style=flat-square" alt="GitHub Issues"> 
     <a href="https://github.com/SSGorg/Cryptex/stargazers"><img src="https://img.shields.io/github/stars/SSGorg/Cryptex?style=flat-square&color=0d1117" alt="GitHub Stars"></a>
     <a href="https://github.com/SSGorg/Cryptex/pulls"><img src="https://img.shields.io/github/issues-pr/SSGorg/Cryptex?color=0d1117&style=flat-square" alt="GitHub Pull Requests"></a>
+    <a href="https://app.codacy.com/gh/SSGorg/Cryptex/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img src="https://app.codacy.com/project/badge/Grade/004d9a95af4e4054b7aad37e7af6609d"/></a>
 </p>
   
 ## 🤝 Sponsors / Endorsements: Thank you so much!     
