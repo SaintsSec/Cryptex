@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://i.imgur.com/AeE9koP.png" alt="Logo">
   <h1> Cryptex | An SSG Community Project </h1>
-  <h2>An advance commandline cryptographcy toolkit.</h2>
+  <h2>An advance commandline cryptography toolkit.</h2>
   <h1>v1.0.0 Pumpkin Patch - Released</h1>
 </div>
 
@@ -27,7 +27,8 @@
   - [Contributing](#-contributing)
   - [Our Amazing Contributors](#our-amazing-contributors)
   
-## 📖 History
+## 📖 History - About Cryptex  
+Cryptex is a purpose built CLI cryptography tool kit. Meant to make encrypting and decrypting text and files easy. 
 Cryptex started out in November, 2021, with one developer, Alex "cythes" Kollar, as an attempt to be less of a script kiddie.
 It has since then became so much more. As of April, 2022, Alex decided to open the project up to the SSG community to reap some absolutely incredible results. At this point, the SSG | Cryptex Dev Team was founded with a the idea of building Cryptex into a cryptography tool that people could use, install and add to with ease. Similar to Metasploit, the project and the team has evolved so much in the little time that it has existed for.  
   
