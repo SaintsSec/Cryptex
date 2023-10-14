@@ -44,7 +44,7 @@ Other notes:
 - Reworked Menu System
 - Crossplatform Support (Mac / Windows)
 
-> All of this is pushing Cryptex ever closer to its goal of becoming the `Metaploit of cryptography`  
+> All of this is pushing Cryptex ever closer to its goal of becoming the `Metasploit of cryptography`  
       
 ## [🛠️Basic Help](https://github.com/SSGorg/Cryptex/wiki/Cryptex-Syntax)
 
